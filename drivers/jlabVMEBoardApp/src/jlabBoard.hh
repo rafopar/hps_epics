@@ -20,7 +20,6 @@
 #include <vector>
 #include <map>
 
-#include "jlabChannel.hh"
 
 using namespace std;
 
@@ -39,7 +38,7 @@ public:
 	jlabBoard( uint32_t address );
 
 	// Destructor. Destroys this board. 
-	~jlabBoard();
+	virtual ~jlabBoard();
 
 	// Return boards type FADC250_v2, JlabDisc_v2 or whatever
 	virtual string 				GetType() = 0;

@@ -31,7 +31,7 @@ protected:
 	jlabFADC250Board(const jlabFADC250Board& board);
 	jlabFADC250Board& operator=(const jlabFADC250Board& board);
 
-	static constant unsigned jfbChanNumber = 16;
+	static const unsigned jfbChanNumber = 16;
 		
 public:
 
@@ -41,7 +41,7 @@ public:
 	jlabFADC250Board( uint32_t  address );
 
 	// Destructor. Destroys this board. 
-	~jlabFADC250Board();
+	virtual ~jlabFADC250Board();
 	
 	// Return boards type FADC250_v2 or whatever
 	virtual string 				GetType();
@@ -63,7 +63,7 @@ public:
 	// Get a vector of thresholds for  a particular type of thresholds
 	virtual vector<double>		GetThresholds( const string threshType );
 	// Get the values of threshold for a single channel of a partcular threshold type
-	virtual double				GetThreshold( const unsigned chanNumb, const string threshType )
+  virtual double				GetThreshold( const unsigned chanNumb, const string threshType );
 	
 	// Return the histogram for energy spectrum for a particular channel
 	vector<double>				GetSpectrum( const unsigned chanNumb );

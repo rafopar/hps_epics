@@ -31,7 +31,7 @@ protected:
 	jlabDiscBoard(const jlabDiscBoard& board);
 	jlabDiscBoard& operator=(const jlabDiscBoard& board);
 
-	static constant unsigned jdbChanNumber = 16;
+	static const unsigned jdbChanNumber = 16;
 		
 public:
 
@@ -41,7 +41,7 @@ public:
 	jlabDiscBoard( uint32_t  address );
 
 	// Destructor. Destroys this board. 
-	~jlabDiscBoard();
+	virtual ~jlabDiscBoard();
 	
 	// Return boards type JlabDisc_v2 or whatever
 	virtual string 				GetType();
