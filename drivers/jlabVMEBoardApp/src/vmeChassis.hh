@@ -33,12 +33,16 @@ protected:
 	
 	// Map with the boards that the chassis can see. The key is the slot number.
 	map<uint32_t, jlabBoard*> 	vcBoardMap;
-		
+	
+	// Map of chassis that have been connected so far
+	static map<string,vmeChassis*> vcMapOfChassis;
+	
 public:
 
 	// Constructor. Open communication for the chassis specified by IP address.
 	// Create all board objects on that chassis and fill the board map. 
-	// Throws an exception if fails to create the object.
+	// Throws an exception if fails to create the object or the chassis 
+	// already has been connected.
 	vmeChassis( const string ipAddress );
 
 	// Destructor. Destroys this board. 
@@ -55,7 +59,8 @@ public:
 	
 	// Return the map with the boards that the chassis can see. The key is the slot number.
 	map<uint32_t, jlabBoard*>	GetBoardMap();
-			
+	
+	static map<string,vmeChassis*> GetMapOfChassis();	
 };
 
 #endif /* _vmeChassis_HH_ */
