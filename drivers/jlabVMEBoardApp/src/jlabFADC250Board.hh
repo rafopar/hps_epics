@@ -38,7 +38,7 @@ public:
 	// Constructor. Create FADC250 board object specified by base address
 	// Create all channel objects on that board and fill the channel vector. 
 	// Throws an exception if fails to create the object.
-	jlabFADC250Board( uint32_t  address );
+	jlabFADC250Board( uint32_t  address, string ip = "127.0.0.1" );
 
 	// Destructor. Destroys this board. 
 	virtual ~jlabFADC250Board();

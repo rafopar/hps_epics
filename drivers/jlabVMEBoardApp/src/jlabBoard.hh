@@ -35,7 +35,7 @@ public:
 	// Constructor. Create the board object specified by the base address
 	// Create all channel objects on that board and fill the channel vector. 
 	// Throws an exception if fails to create the object.
-	jlabBoard( uint32_t address );
+	jlabBoard( uint32_t address, string ip = "127.0.0.1" );
 
 	// Destructor. Destroys this board. 
 	virtual ~jlabBoard();
