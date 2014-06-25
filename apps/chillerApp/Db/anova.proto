@@ -1,0 +1,82 @@
+#
+# ANOVA Refrigerated and Heating Circulators - A Series
+# 
+# Author: Wesley Moore
+# Date:   June 2014
+#
+
+Terminator = CR;
+PREFIX     = ;
+Separator  = ",";
+ReadTimeout = 1000;
+ReplyTimeout = 1000;
+
+#######################################
+# Status Commands
+#######################################
+getVersion {
+    out "version";
+    in  "%s";
+}
+
+getStatus {
+    out "status";
+    in  "%s";
+}
+
+setDefault {
+    out "default";
+#    in  "%s";
+}
+
+#######################################
+# Control Commands
+#######################################
+start {
+    out "start";
+}
+
+stop {
+    out "stop";
+}
+
+clear {
+    out "clear";
+}
+
+#######################################
+# Settings Commands
+#######################################
+getTemp {
+    out "get temp setting";
+    in  "%f";
+}
+
+setTemp {
+    out "set temp %f";
+}
+
+getHighLimit {
+    out "get temp setting";
+    in  "%f";
+}
+
+setHighLimit {
+    out "set highlimit %f";
+    @init { getHighLimit; }
+}
+
+getLowLimit {
+    out "get lowlimit setting";
+    in  "%f";
+}
+
+setLowLimit {
+    out "set lowlimit %f";
+    @init { getLowLimit; }
+}
+
+setPumpSpd {
+    out "set pump speed %d";
+}
+
