@@ -1,28 +1,37 @@
 #!../../bin/linux-x86/chiller
 
-## You may have to change chiller to something else
-## everywhere it appears in this file
-
 < envPaths
 
 cd ${TOP}
 
 ## Register all support components
-dbLoadDatabase "dbd/chiller.dbd"
-chiller_registerRecordDeviceDriver pdbbase
+dbLoadDatabase("dbd/chiller.dbd")
+chiller_registerRecordDeviceDriver(pdbbase)
+
+epicsEnvSet("STREAM_PROTOCOL_PATH","${TOP}/proto")
+
+drvAsynSerialPortConfigure("SER8","/dev/tty_dgrp_D_7",0,0,0)
+
+# debugging...
+#asynSetTraceMask("SER8",-1,0x09)
+#asynSetTraceIOMask("SER8",-1,0x2)
 
 ## Load record instances
-dbLoadTemplate "db/userHost.substitutions"
-dbLoadRecords "db/dbSubExample.db", "user=wmooreHost"
-
-## Set this to see messages from mySub
-#var mySubDebug 1
-
-## Run this to trace the stages of iocInit
-#traceIocInit
+dbLoadRecords("db/save_restoreStatus.db", "P=iocchillerTest:")
+dbLoadRecords("db/anova.db", "P=CHILL:,R=,PROTO=anova.proto,PORT=SER8")
 
 cd ${TOP}/iocBoot/${IOC}
+
+# autosave setup
+< save_restore.cmd
+
+dbl > pv.list
 iocInit
 
-## Start any sequence programs
-#seq sncExample, "user=wmooreHost"
+# autosave startup
+create_monitor_set("anova_settings.req", 30, "P=CHILL:,R=")
+
+# Handle autosave 'commands' contained in loaded databases.
+makeAutosaveFiles()
+create_monitor_set("info_positions.req", 5, "P=xxx:")
+create_monitor_set("info_settings.req", 30, "P=xxx:")

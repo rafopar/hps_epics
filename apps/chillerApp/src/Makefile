@@ -10,19 +10,19 @@ include $(TOP)/configure/CONFIG
 LIBRARY_IOC += chillerSupport
 
 # xxxRecord.h will be created from xxxRecord.dbd
-DBDINC += xxxRecord
+#DBDINC += xxxRecord
 # Install devXxxSoft.dbd into <top>/dbd
-DBD += xxxSupport.dbd
+#DBD += xxxSupport.dbd
 
 # Compile and add the code to the support library
-chillerSupport_SRCS += xxxRecord.c
-chillerSupport_SRCS += devXxxSoft.c
+#chillerSupport_SRCS += xxxRecord.c
+#chillerSupport_SRCS += devXxxSoft.c
 
 # Link locally-provided code into the support library,
 # rather than directly into the IOC application.
-chillerSupport_SRCS += dbSubExample.c
-chillerSupport_SRCS += chillerHello.c
-chillerSupport_SRCS += initTrace.c
+#chillerSupport_SRCS += dbSubExample.c
+#chillerSupport_SRCS += chillerHello.c
+#chillerSupport_SRCS += initTrace.c
 
 chillerSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
 
@@ -35,10 +35,12 @@ DBD += chiller.dbd
 
 # chiller.dbd will be made up from these files:
 chiller_DBD += base.dbd
-chiller_DBD += xxxSupport.dbd
-chiller_DBD += dbSubExample.dbd
-chiller_DBD += chillerHello.dbd
-chiller_DBD += initTrace.dbd
+#chiller_DBD += sCalcoutRecord.dbd
+chiller_DBD += drvAsynSerialPort.dbd
+chiller_DBD += stream.dbd
+#chiller_DBD += streamSynApps.dbd
+chiller_DBD += asSupport.dbd
+#chiller_DBD += devIocStats.dbd
 
 # chiller_registerRecordDeviceDriver.cpp derives from chiller.dbd
 chiller_SRCS += chiller_registerRecordDeviceDriver.cpp
@@ -52,6 +54,12 @@ chiller_SRCS_vxWorks += -nil-
 
 # Link in the code from the support library
 chiller_LIBS += chillerSupport
+
+chiller_LIBS += autosave
+#chiller_LIBS += calc sscan
+chiller_LIBS += stream streamSynApps
+#chiller_LIBS += devIocStats
+chiller_LIBS += asyn
 
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file

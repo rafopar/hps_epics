@@ -8,10 +8,11 @@ include $(TOP)/configure/CONFIG
 #DB_OPT = YES
 
 #----------------------------------------------------
-# Create and install (or just install)
-# databases, templates, substitutions like this
+DB_INSTALLS += $(AUTOSAVE)/asApp/Db/save_restoreStatus.db
+
 DB    += anova.db
 PROTO += anova.proto
+REQ   += anova_settings.req
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
