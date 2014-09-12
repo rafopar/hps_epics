@@ -1,0 +1,17 @@
+startup = "/home/levon/controls/R3.14.12.3/apps/iocBoot/iocclassc4"
+putenv("ARCH=vxWorks-ppc604_long")
+putenv("IOC=iocclassc4")
+top = "/home/levon/controls/R3.14.12.3/apps"
+putenv("TOP=/home/levon/controls/R3.14.12.3/apps")
+topbin = "/home/levon/controls/R3.14.12.3/apps/bin/vxWorks-ppc604_long"
+deviocstats = "/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12"
+putenv("DEVIOCSTATS=/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12")
+deviocstatsbin = "/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12/bin/vxWorks-ppc604_long"
+self = "/home/levon/controls/R3.14.12.3/apps"
+putenv("SELF=/home/levon/controls/R3.14.12.3/apps")
+selfbin = "/home/levon/controls/R3.14.12.3/apps/bin/vxWorks-ppc604_long"
+putenv("EPICS_SYNAPPS=/usr/local/clas12/release/0.1/R3.14.12.3/synApps/synApps_5_5/support")
+a = malloc(1024)
+strcpy(a,"STREAM_PROTOCOL_PATH=/usr/local/clas12/release/0.1/R3.14.12.3/synApps/synApps_5_5/support")
+strcat(a,"/asyn-4-13/templates/streamSCPI/_NAME_Sup/dev_NAME_.proto")
+putenv(a)
