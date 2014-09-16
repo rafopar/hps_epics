@@ -2,7 +2,7 @@
 
 ## The following is needed if your board support package doesn't at boot time
 ## automatically cd to the directory containing its startup script
-cd "/home/levon/controls/R3.14.12.3/apps/iocBoot/iocclassc6"
+cd "$IOC_root_classc6/iocBoot/iocclassc6"
 
 < cdCommands
 #< ../nfsCommands
@@ -61,6 +61,11 @@ dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=29")
 dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=30")
 dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=31")
 
+# Load IOC status records
+dbLoadRecords("db/iocAdminVxWorks.db","IOC=classc6")
+#dbLoadRecords("../support/devIocStats-3.1.12/db/iocAdminVxWorks.db","IOC=classc6")
+
+
 
 # SIS 8201/7201 scaler (STRUCK scaler) setup parameters:
 #     (1)cards, (2)base address(ext, 256-byte boundary),
@@ -73,37 +78,7 @@ STR7201Config(0,32,4096)
 STR7201Config(4,32,16)
 ###
 
-#
-# OMS stepper motor driver
-#
-##recMotordebug = 11
-##devOMSdebug   = 11
-#
-# OMS VME driver setup parameters: 
-#     (1)cards, (2)base address(short, 16-byte boundary), 
-#     (3)interrupt vector (0=disable or  64 - 255), (4)interrupt level (1 - 6),
-#     (5)motor task polling rate (min=1Hz,max=60Hz)
-omsSetup(2, 0x8000, 180, 5, 60)
-#omsSetup(1, 0x2000, 180, 5, 10)
 
-## Set this to see messages from mySub
-#mySubDebug = 1
-
-#recScalerdebug=0
-#devScalerdebug=0
-devScaler_VSDebug=0
-devScalerDebug=0
-# Joerger VSC setup parameters:
-#     (1)cards, (2)base address(ext, 256-byte boundary),
-#     (3)interrupt vector (0=disable or  64 - 255)
-#mv162
-#VSCSetup(2, 0x02000000, 200)
-#ppc
-VSCSetup(3, 0x0a000000, 200)
-
-
-## Run this to trace the stages of iocInit
-#traceIocInit
 
 cd startup
 iocInit

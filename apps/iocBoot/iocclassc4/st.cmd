@@ -2,7 +2,7 @@
 
 ## The following is needed if your board support package doesn't at boot time
 ## automatically cd to the directory containing its startup script
-cd "/home/levon/controls/R3.14.12.3/apps/iocBoot/iocclassc4"
+cd "$IOC_root_classc4/iocBoot/iocclassc4"
 
 < cdCommands
 #< ../nfsCommands
@@ -66,18 +66,10 @@ dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=31")
 
 dbLoadRecords("db/scaler_c.db")
 dbLoadRecords("db/frwd_scaler.db")
-#dbLoadRecords("db/stopper.db")
+dbLoadRecords("db/stopper.db")
 
-# SIS 8201/7201 scaler (STRUCK scaler) setup parameters:
-#     (1)cards, (2)base address(ext, 256-byte boundary),
-#     (3)interrupt vector (0=disable or  64 - 255)
-devSTR7201Debug = 0
-drvSTR7201Debug = 0
-#ppc
-STR7201Setup(5, 0x08000000, 221, 6)
-STR7201Config(0,32,4096)
-STR7201Config(4,32,16)
-###
+# Load IOC status records
+dbLoadRecords("db/iocAdminVxWorks.db","IOC=classc4")
 
 recScalerdebug=0
 devScalerdebug=0
@@ -87,7 +79,7 @@ devScalerdebug=0
 #mv162
 #VSCSetup(2, 0x02000000, 200)
 #ppc
-VSCSetup(3, 0x0a000000, 200)
+VSCSetup(2, 0x0a000000, 200)
 
 
 cd startup

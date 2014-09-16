@@ -75,18 +75,19 @@ classc6_LIBS += autosave
 classc6_LIBS += std
 classc6_LIBS += stream streamSynApps
 classc6_LIBS += asyn
-classc6_LIBS += seqDev seq pv 
+
+
 
 classc6_LIBS += mcaSIS
 classc6_LIBS += mcaCanberra
 
+classc6_LIBS += devIocStats
 
-classc6_LIBS += softDevIoc
-
+classc6_LIBS += seqDev seq pv 
 
 classc6_LIBS += sixty_hzSupport
 classc6_LIBS += btaSupport
-classc6_LIBS += devIocStats
+
 
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file

@@ -69,13 +69,14 @@ classc4_LIBS += asyn
 classc4_LIBS += mcaSIS
 classc4_LIBS += mcaCanberra
 classc4_LIBS += vme
+classc4_LIBS += devIocStats
 
 classc4_LIBS += seqDev seq pv 
 
 classc4_LIBS += sixty_hzSupport
 classc4_LIBS += scaler_cSupport
 classc4_LIBS += frwd_scalerSupport
-classc4_LIBS += devIocStats
+
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
 

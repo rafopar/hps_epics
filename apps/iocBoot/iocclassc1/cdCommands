@@ -1,15 +1,16 @@
-startup = "/home/levon/controls/R3.14.12.3/apps/iocBoot/iocclassc1"
-putenv("ARCH=vxWorks-ppc604_long")
+putenv("ENGINEER=epics")
+startup = "$IOC_root_classc1/iocBoot/iocclassc1"
+putenv("ARCH=$IOC_arch_classc1")
 putenv("IOC=iocclassc1")
-top = "/home/levon/controls/R3.14.12.3/apps"
-putenv("TOP=/home/levon/controls/R3.14.12.3/apps")
-topbin = "/home/levon/controls/R3.14.12.3/apps/bin/vxWorks-ppc604_long"
-deviocstats = "/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12"
-putenv("DEVIOCSTATS=/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12")
-deviocstatsbin = "/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12/bin/vxWorks-ppc604_long"
-self = "/home/levon/controls/R3.14.12.3/apps"
-putenv("SELF=/home/levon/controls/R3.14.12.3/apps")
-selfbin = "/home/levon/controls/R3.14.12.3/apps/bin/vxWorks-ppc604_long"
+top = "$IOC_root_classc1"
+putenv("TOP=$IOC_root_classc1")
+topbin = "$IOC_root_classc1/bin/$IOC_arch_classc1"
+#deviocstats = "/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12"
+#putenv("DEVIOCSTATS=/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12")
+#deviocstatsbin = "/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12/bin/$IOC_arch_classc1"
+self = "$IOC_root_classc1"
+putenv("SELF=$IOC_root_classc1")
+selfbin = "$IOC_root_classc1/bin/$IOC_arch_classc1"
 
 putenv("EPICS_SYNAPPS=/usr/local/clas12/release/0.1/R3.14.12.3/synApps/synApps_5_5/support")
 a = malloc(1024)

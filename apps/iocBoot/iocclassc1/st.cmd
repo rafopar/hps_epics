@@ -2,7 +2,7 @@
 
 ## The following is needed if your board support package doesn't at boot time
 ## automatically cd to the directory containing its startup script
-cd "/home/levon/controls/R3.14.12.3/apps/iocBoot/iocclassc1"
+cd "$IOC_root_classc1/iocBoot/iocclassc1"
 
 < cdCommands
 #< ../nfsCommands
