@@ -93,22 +93,10 @@ STR7201Setup(1, 0x08000000, 220, 6)
 STR7201Config(0,32,32768,0)
 
 #
-# OMS stepper motor driver
+# Scaler debug switches
 #
-##recMotordebug = 11
-##devOMSdebug   = 11
-#
-# OMS VME driver setup parameters: 
-#     (1)cards, (2)base address(short, 16-byte boundary), 
-#     (3)interrupt vector (0=disable or  64 - 255), (4)interrupt level (1 - 6),
-#     (5)motor task polling rate (min=1Hz,max=60Hz)
-omsSetup(2, 0x8000, 180, 5, 60)
-#omsSetup(1, 0x2000, 180, 5, 10)
-
-#recScalerdebug=0
-#devScalerdebug=0
-devScaler_VSDebug=0
-devScalerDebug=0
+recScalerdebug=0
+devScalerdebug=0
 # Joerger VSC setup parameters:
 #     (1)cards, (2)base address(ext, 256-byte boundary),
 #     (3)interrupt vector (0=disable or  64 - 255)
@@ -116,6 +104,19 @@ devScalerDebug=0
 #VSCSetup(2, 0x02000000, 200)
 #ppc
 VSCSetup(3, 0x0a000000, 200)
+#
+# OMS vme8/vme44 debug switches
+#
+recMotordebug = 0
+devOMSdebug   = 0
+drvOMSdebug   = 0
+#
+# OMS VME driver setup parameters: 
+#     (1)cards, (2)axis per card, (3)base address(short, 16-byte boundary), 
+#     (4)interrupt vector (0=disable or  64 - 255), (5)interrupt level (1 - 6),
+#     (6)motor task polling rate (min=1Hz,max=60Hz)
+omsSetup(2, 0x8000, 180, 5, 60)
+
 
 #/*****************************************************
 #* VSCSetup()
@@ -141,8 +142,19 @@ VSCSetup(3, 0x0a000000, 200)
 cd startup
 iocInit
 
+# set some initial values:
+dbpf "fcup_offset","0"
+dbpf "fcup_slope","9256"
+#dbpf "fcup_slope","9267"
+dbpf "moller_accumulate","1"
+#dbpf "scaler.CNT","1"
+#dbpf "scaler_d.CNT","1"
+#dbpf "scaler_d_mode.VAL","1"
+#dbpf "display_d_mode.VAL","1"
+
 ## Start any sequence programs
 #seq &sncExample, "user=levon"
+
 seq &asym
 seq &reset_motor, "name=up_2c21_reset, motor_name=harp_2c21"
 seq &harp_scan_generic, "name=up_2c21_scan, motor_name=harp_2c21"
@@ -155,6 +167,6 @@ seq &harp_scan_generic, "name=harp_2h00_scan, motor_name=harp_2h00"
 
 seq &reset_motor, "name=collimator_reset, motor_name=collimator"
 
-#seq &scaler_restart
-#seq &scaler_d_restart
-#seq &scaler_e_restart
+seq &scaler_restart
+seq &scaler_d_restart
+seq &scaler_e_restart
