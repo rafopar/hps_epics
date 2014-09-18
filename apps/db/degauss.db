@@ -1,0 +1,13 @@
+
+record(stringin,"pspec_degauss_stat") 
+{
+}
+
+record( bo, "pspec_command" )
+{
+        field(PINI,"NO")
+        field(SCAN,"Passive")
+        field(DTYP,"Soft Channel")
+        field(ZNAM,"Done")
+        field(ONAM,"Degauss")
+}  
