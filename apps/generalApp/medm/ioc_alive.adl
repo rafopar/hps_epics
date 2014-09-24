@@ -1,6 +1,6 @@
 
 file {
-	name="/misc/home/levon/controls/R3.14.12.3/apps/generalApp/medm/ioc_alive.adl"
+	name="/misc/home/levon/github/epics/apps/generalApp/medm/ioc_alive.adl"
 	version=030108
 }
 display {
@@ -179,47 +179,36 @@ text {
 	clr=14
 	bclr=4
 }
-composite {
+oval {
 	object {
 		x=105
 		y=200
 		width=12
 		height=12
 	}
-	"composite name"=""
-	children {
-		oval {
-			object {
-				x=105
-				y=200
-				width=12
-				height=12
-			}
-			"basic attribute" {
-				clr=60
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="((A%2) = 0)"
-				chan="classc6:heartbeat"
-			}
-		}
-		oval {
-			object {
-				x=105
-				y=200
-				width=12
-				height=12
-			}
-			"basic attribute" {
-				clr=35
-			}
-			"dynamic attribute" {
-				vis="calc"
-				calc="(((A+1)%2) = 0)"
-				chan="classc6:heartbeat"
-			}
-		}
+	"basic attribute" {
+		clr=60
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="((A%2) = 0)"
+		chan="classc6:HEARTBEAT"
+	}
+}
+oval {
+	object {
+		x=105
+		y=200
+		width=12
+		height=12
+	}
+	"basic attribute" {
+		clr=35
+	}
+	"dynamic attribute" {
+		vis="calc"
+		calc="(((A+1)%2) = 0)"
+		chan="classc6:HEARTBEAT"
 	}
 }
 text {

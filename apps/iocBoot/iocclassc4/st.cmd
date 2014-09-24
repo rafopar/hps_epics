@@ -67,6 +67,8 @@ dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=31")
 dbLoadRecords("db/scaler_c.db")
 dbLoadRecords("db/frwd_scaler.db")
 dbLoadRecords("db/stopper.db")
+dbLoadRecords("db/fcup_gain.db")
+dbLoadRecords("db/stopper.db")
 
 # Load IOC status records
 dbLoadRecords("db/iocAdminVxWorks.db","IOC=classc4")
@@ -89,6 +91,6 @@ iocInit
 #seq &sncExample, "user=levon"
 
 seq &sixtyHz
-#seq &scaler_frwd_restart
-#seq &scaler_c_restart
+seq &scaler_frwd_restart
+seq &scaler_c_restart
 
