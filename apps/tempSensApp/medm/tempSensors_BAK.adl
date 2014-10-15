@@ -1,0 +1,3835 @@
+
+file {
+	name="/misc/home/wmoore/hallb/epics/apps/tempSensApp/medm/tempSensors.adl"
+	version=030108
+}
+display {
+	object {
+		x=564
+		y=215
+		width=750
+		height=810
+	}
+	clr=14
+	bclr=4
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=750
+		height=40
+	}
+	"basic attribute" {
+		clr=53
+	}
+}
+text {
+	object {
+		x=0
+		y=5
+		width=750
+		height=10
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Omegabus D5311"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=0
+		y=20
+		width=750
+		height=10
+	}
+	"basic attribute" {
+		clr=0
+	}
+	textix="Digital Transmitters"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=104
+		y=55
+		width=105
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Raw Rdbk"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=234
+		y=55
+		width=105
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Scale"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=368
+		y=55
+		width=105
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Offset"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=502
+		y=55
+		width=105
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Cal. Degrees F"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=614
+		y=55
+		width=105
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Cal. Degrees C"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=25
+		y=81
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel A"
+}
+"text update" {
+	object {
+		x=111
+		y=77
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorA:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=225
+		y=80
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=241
+		y=75
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorA:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=357
+		y=80
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=375
+		y=76
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorA:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=491
+		y=80
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=509
+		y=77
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorA_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=594
+		y=77
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorA_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=621
+		y=77
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorA_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=706
+		y=77
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorA_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=113
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel B"
+}
+"text update" {
+	object {
+		x=111
+		y=109
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorB:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=225
+		y=112
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=241
+		y=107
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorB:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=357
+		y=112
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=375
+		y=108
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorB:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=491
+		y=112
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=509
+		y=109
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorB_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=594
+		y=109
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorB_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=621
+		y=109
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorB_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=706
+		y=109
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorB_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=145
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel C"
+}
+"text update" {
+	object {
+		x=111
+		y=141
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorC:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=225
+		y=144
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=241
+		y=139
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorC:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=357
+		y=144
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=375
+		y=140
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorC:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=491
+		y=144
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=509
+		y=141
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorC_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=594
+		y=141
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorC_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=621
+		y=141
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorC_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=706
+		y=141
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorC_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=177
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel D"
+}
+"text update" {
+	object {
+		x=111
+		y=173
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorD:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=225
+		y=176
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=241
+		y=171
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorD:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=357
+		y=176
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=375
+		y=172
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorD:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=491
+		y=176
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=509
+		y=173
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorD_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=594
+		y=173
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorD_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=621
+		y=173
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorD_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=706
+		y=173
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorD_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=25
+		y=209
+		width=700
+		height=4
+	}
+	"basic attribute" {
+		clr=9
+	}
+}
+text {
+	object {
+		x=27
+		y=231
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel E"
+}
+"text update" {
+	object {
+		x=113
+		y=227
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorE:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=227
+		y=230
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=243
+		y=225
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorE:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=359
+		y=230
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=377
+		y=226
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorE:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=493
+		y=230
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=511
+		y=227
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorE_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=596
+		y=227
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorE_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=623
+		y=227
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorE_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=708
+		y=227
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorE_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=27
+		y=263
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel F"
+}
+"text update" {
+	object {
+		x=113
+		y=259
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorF:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=227
+		y=262
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=243
+		y=257
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorF:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=359
+		y=262
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=377
+		y=258
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorF:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=493
+		y=262
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=511
+		y=259
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorF_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=596
+		y=259
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorF_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=623
+		y=259
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorF_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=708
+		y=259
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorF_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=27
+		y=295
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel G"
+}
+"text update" {
+	object {
+		x=113
+		y=291
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorG:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=227
+		y=294
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=243
+		y=289
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorG:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=359
+		y=294
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=377
+		y=290
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorG:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=493
+		y=294
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=511
+		y=291
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorG_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=596
+		y=291
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorG_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=623
+		y=291
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorG_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=708
+		y=291
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorG_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=27
+		y=327
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel H"
+}
+"text update" {
+	object {
+		x=113
+		y=323
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorH:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=227
+		y=326
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=243
+		y=321
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorH:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=359
+		y=326
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=377
+		y=322
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorH:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=493
+		y=326
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=511
+		y=323
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorH_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=596
+		y=323
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorH_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=623
+		y=323
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorH_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=708
+		y=323
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorH_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=27
+		y=359
+		width=700
+		height=4
+	}
+	"basic attribute" {
+		clr=9
+	}
+}
+text {
+	object {
+		x=29
+		y=381
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel I"
+}
+"text update" {
+	object {
+		x=115
+		y=377
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorI:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=229
+		y=380
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=245
+		y=375
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorI:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=380
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=379
+		y=376
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorI:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=495
+		y=380
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=513
+		y=377
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorI_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=598
+		y=377
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorI_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=625
+		y=377
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorI_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=710
+		y=377
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorI_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=29
+		y=413
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel J"
+}
+"text update" {
+	object {
+		x=115
+		y=409
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorJ:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=229
+		y=412
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=245
+		y=407
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorJ:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=412
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=379
+		y=408
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorJ:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=495
+		y=412
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=513
+		y=409
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorJ_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=598
+		y=409
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorJ_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=625
+		y=409
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorJ_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=710
+		y=409
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorJ_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=29
+		y=445
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel K"
+}
+"text update" {
+	object {
+		x=115
+		y=441
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorK:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=229
+		y=444
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=245
+		y=439
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorK:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=444
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=379
+		y=440
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorK:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=495
+		y=444
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=513
+		y=441
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorK_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=598
+		y=441
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorK_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=625
+		y=441
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorK_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=710
+		y=441
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorK_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=29
+		y=477
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel L"
+}
+"text update" {
+	object {
+		x=115
+		y=473
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorL:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=229
+		y=476
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=245
+		y=471
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorL:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=476
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=379
+		y=472
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorL:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=495
+		y=476
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=513
+		y=473
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorL_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=598
+		y=473
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorL_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=625
+		y=473
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorL_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=710
+		y=473
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorL_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=29
+		y=509
+		width=700
+		height=4
+	}
+	"basic attribute" {
+		clr=9
+	}
+}
+text {
+	object {
+		x=29
+		y=531
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel M"
+}
+"text update" {
+	object {
+		x=115
+		y=527
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorM:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=229
+		y=530
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=245
+		y=525
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorM:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=530
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=379
+		y=526
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorM:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=495
+		y=530
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=513
+		y=527
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorM_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=598
+		y=527
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorM_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=625
+		y=527
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorM_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=710
+		y=527
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorM_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=29
+		y=563
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel N"
+}
+"text update" {
+	object {
+		x=115
+		y=559
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorN:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=229
+		y=562
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=245
+		y=557
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorN:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=562
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=379
+		y=558
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorN:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=495
+		y=562
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=513
+		y=559
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorN_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=598
+		y=559
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorN_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=625
+		y=559
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorN_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=710
+		y=559
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorN_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=29
+		y=595
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel O"
+}
+"text update" {
+	object {
+		x=115
+		y=591
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorO:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=229
+		y=594
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=245
+		y=589
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorO:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=594
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=379
+		y=590
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorO:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=495
+		y=594
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=513
+		y=591
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorO_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=598
+		y=591
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorO_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=625
+		y=591
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorO_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=710
+		y=591
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorO_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=29
+		y=627
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel P"
+}
+"text update" {
+	object {
+		x=115
+		y=623
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorP:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=229
+		y=626
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=245
+		y=621
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorP:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=361
+		y=626
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=379
+		y=622
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorP:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=495
+		y=626
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=513
+		y=623
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorP_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=598
+		y=623
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorP_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=625
+		y=623
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorP_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=710
+		y=623
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorP_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=29
+		y=659
+		width=700
+		height=4
+	}
+	"basic attribute" {
+		clr=9
+	}
+}
+text {
+	object {
+		x=30
+		y=681
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel Q"
+}
+"text update" {
+	object {
+		x=116
+		y=677
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorQ:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=230
+		y=680
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=246
+		y=675
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorQ:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=362
+		y=680
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=380
+		y=676
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorQ:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=496
+		y=680
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=514
+		y=677
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorQ_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=599
+		y=677
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorQ_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=626
+		y=677
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorQ_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=711
+		y=677
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorQ_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=30
+		y=713
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel R"
+}
+"text update" {
+	object {
+		x=116
+		y=709
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorR:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=230
+		y=712
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=246
+		y=707
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorR:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=362
+		y=712
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=380
+		y=708
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorR:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=496
+		y=712
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=514
+		y=709
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorR_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=599
+		y=709
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorR_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=626
+		y=709
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorR_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=711
+		y=709
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorR_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=30
+		y=745
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel S"
+}
+"text update" {
+	object {
+		x=116
+		y=741
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorS:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=230
+		y=744
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=246
+		y=739
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorS:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=362
+		y=744
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=380
+		y=740
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorS:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=496
+		y=744
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=514
+		y=741
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorS_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=599
+		y=741
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorS_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=626
+		y=741
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorS_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=711
+		y=741
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorS_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=30
+		y=777
+		width=75
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channel T"
+}
+"text update" {
+	object {
+		x=116
+		y=773
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorT:RAW"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=230
+		y=776
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="X"
+}
+"text entry" {
+	object {
+		x=246
+		y=771
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorT:CAL.B"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=362
+		y=776
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="+"
+}
+"text entry" {
+	object {
+		x=380
+		y=772
+		width=105
+		height=25
+	}
+	control {
+		chan="tempSensorT:CAL.C"
+		clr=14
+		bclr=3
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=496
+		y=776
+		width=20
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="="
+}
+"text update" {
+	object {
+		x=514
+		y=773
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorT_F"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=599
+		y=773
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorT_F.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=626
+		y=773
+		width=85
+		height=25
+	}
+	monitor {
+		chan="tempSensorT_C"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=711
+		y=773
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorT_C.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=196
+		y=77
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorA:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=196
+		y=109
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorB:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=196
+		y=141
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorC:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=196
+		y=173
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorD:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=198
+		y=227
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorE:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=198
+		y=259
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorF:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=198
+		y=291
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorG:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=198
+		y=323
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorH:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=377
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorI:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=409
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorJ:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=441
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorK:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=473
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorL:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=527
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorM:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=559
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorN:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=591
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorO:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=200
+		y=623
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorP:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=677
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorQ:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=709
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorR:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=741
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorS:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=773
+		width=20
+		height=25
+	}
+	monitor {
+		chan="tempSensorT:RAW.EGU"
+		clr=15
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
