@@ -1,5 +1,5 @@
 putenv("ENGINEER=epics")
-putenv("LOCATION=Space Frame Level Alcove")
+putenv("LOCATION=Space Frame Level Pie Tower")
 startup = "$IOC_root_classc4/iocBoot/iocclassc4"
 putenv("ARCH=$IOC_arch_classc4")
 putenv("IOC=iocclassc4")

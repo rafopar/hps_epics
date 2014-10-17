@@ -73,9 +73,10 @@ dbLoadRecords("db/iocAdminVxWorks.db","IOC=classc6")
 devSTR7201Debug = 0
 drvSTR7201Debug = 0
 #ppc
-STR7201Setup(5, 0x08000000, 221, 6)
+STR7201Setup(3, 0x08000000, 221, 6)
 STR7201Config(0,32,4096)
-STR7201Config(4,32,16)
+STR7201Config(1,32,4096)
+STR7201Config(2,32,4096)
 ###
 
 
