@@ -27,6 +27,8 @@ harp_genericSupport_DBD += stream.dbd
 harp_genericSupport_DBD += streamSynApps.dbd
 harp_genericSupport_DBD += std.dbd
 
+harp_genericSupport_DBD += MiscVx.dbd
+
 harp_genericSupport_DBD += motorSupport.dbd
 harp_genericSupport_DBD += devAcsMotor.dbd
 harp_genericSupport_DBD += devImsMotor.dbd
@@ -97,6 +99,10 @@ harp_generic_LIBS += SmartMotor
 harp_generic_LIBS += KohzuMotor
 harp_generic_LIBS += motor
 
+ifdef IPAC
+harp_generic_LIBS += Ipac TyGSOctal
+endif
+
 # NOTE: To build SNL programs, SNCSEQ must be defined
 # in the <top>/configure/RELEASE file
 
@@ -110,6 +116,7 @@ ifneq ($(SNCSEQ),)
     harp_generic_SRCS += harp_scan_generic.st
     harp_generic_SRCS += reset_motor.st
     harp_genericSupport_LIBS += seq pv
+
 #    harp_generic_LIBS += seq pv
 
     # Build sncProgram as a standalone program

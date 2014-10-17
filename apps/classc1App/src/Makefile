@@ -59,7 +59,7 @@ classc1_DBD += devIocStats.dbd
 
 # Build the main IOC entry point on workstation OSs.
 classc1_SRCS_DEFAULT += classc1Main.cpp
-classc1_SRCS_vxWorks += -nil-
+##classc1_SRCS_vxWorks += -nil-
 classc1_SRCS_vxWorks += classc1_registerRecordDeviceDriver.cpp
 
 # Add support from base/src/vxWorks if needed
@@ -67,6 +67,12 @@ classc1_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Link in the code from the support library
 ##classc1_LIBS += classc1Support
+
+classc1_LIBS += harp_genericSupport
+classc1_LIBS += scalerSupport
+classc1_LIBS += scaler_dSupport
+classc1_LIBS += scaler_eSupport
+classc1_LIBS += asymSupport
 
 classc1_LIBS += mca
 classc1_LIBS += calc
@@ -96,14 +102,14 @@ classc1_LIBS += std
 classc1_LIBS += asyn
 classc1_LIBS += devIocStats
 
+ifdef IPAC
+classc1_LIBS += Ipac TyGSOctal
+endif
+
 classc1_LIBS += seqDev seq pv 
 
 ##classc1_LIBS += classc1AllSupport
-classc1_LIBS += harp_genericSupport
-classc1_LIBS += scalerSupport
-classc1_LIBS += scaler_dSupport
-classc1_LIBS += scaler_eSupport
-classc1_LIBS += asymSupport
+
 ##classc1_LIBS += devIocStats
 
 # NOTE: To build SNL programs, SNCSEQ must be defined

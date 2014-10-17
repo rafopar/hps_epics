@@ -105,9 +105,11 @@ display {
 		args="motor_name=harp_tagger"
 	}
 	display[2] {
-		label="2h00 harp scan"
+#		label="2h00 harp scan"
+		label="2h03 harp scan"
 		name="generic_harp.adl"
-		args="motor_name=harp_2h00"
+#		args="motor_name=harp_2h00"
+		args="motor_name=harp_2h03"
 	}
 	clr=19
 	bclr=60
@@ -131,9 +133,11 @@ display {
 		args="motor_name=harp_tagger"
 	}
 	display[2] {
-		label="2h00 harp expert"
+#		label="2h00 harp expert"
+		label="2h03 harp expert"
 		name="motor_expert.adl"
-		args="motor_name=harp_2h00"
+#		args="motor_name=harp_2h03"
+		args="motor_name=harp_2h03"
 	}
 	clr=14
 	bclr=50
