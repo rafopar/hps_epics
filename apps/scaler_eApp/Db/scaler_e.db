@@ -71,7 +71,13 @@ grecord(bo,"scaler_e_restart")
 #grecord(wait,"scaler_e_wait")
 grecord(calcout,"scaler_e_wait")
 {
-	field(FLNK,"scaler_e_restart.PROC")
+#	field(FLNK,"scaler_e_restart.PROC")
+	field(CALC, "1")
+	field(ODLY, "0.025")
+	field(OOPT, "Every Time")
+	field(DOPT, "Use OCAL")
+	field(OUT,  "scaler_e_restart PP NMS")
+	field(OCAL, "1")
 }
 
 grecord(mbbo,"display_e_mode")

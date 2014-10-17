@@ -1,6 +1,6 @@
 grecord(scaler,"scaler_c")
 {
-	field(SCAN,"I/O Intr")
+	#field(SCAN,"I/O Intr")
 	field(DTYP,"Joerger VSC8/16")
 	field(FLNK,"scaler_c_calc1.PROC PP MS")
 	field(FREQ,"10000000")
@@ -70,8 +70,13 @@ grecord(bo,"scaler_c_restart")
 #grecord(wait,"scaler_c_wait")
 grecord(calcout,"scaler_c_wait")
 {
-{
-	field(FLNK,"scaler_c_restart.PROC")
+#	field(FLNK,"scaler_c_restart.PROC")
+	field(CALC, "1")
+	field(ODLY, "0.025")
+	field(OOPT, "Every Time")
+	field(DOPT, "Use OCAL")
+	field(OUT,  "scaler_c_restart PP NMS")
+	field(OCAL, "1")
 }
 
 grecord(mbbo,"display_c_mode")
