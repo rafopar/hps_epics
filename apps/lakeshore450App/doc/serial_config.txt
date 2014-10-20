@@ -1,0 +1,10 @@
+RS-232C pinout for Lakeshore 450 to Moxa NPort 5650
+
+Lakeshore	Moxa
+RJ11		RJ45
+--------------------
+RxD  2		4  TxD
+GND  3 		3  GND
+GND  4
+TxD  5		5  RxD
+
