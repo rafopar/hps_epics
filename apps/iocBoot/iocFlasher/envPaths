@@ -1,5 +1,0 @@
-epicsEnvSet("ARCH","linux-x86_64")
-epicsEnvSet("IOC","iocFlasher")
-epicsEnvSet("IOCSH_PS1","iocFlasher>")
-epicsEnvSet("TOP","../..")
-epicsEnvSet("EPICS_BASE","/usr/clas/clas12/R3.14.12.3/base")
