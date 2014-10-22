@@ -5,12 +5,23 @@ DIRS := $(DIRS) $(filter-out $(DIRS), configure)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
 
+# TODO (wmoore): remove after mpodCratesApp build gets sorted out
+EXCLUDE_LIST := mpodCratesApp
+DIRS := $(filter-out $(EXCLUDE_LIST),$(DIRS))
+
+
 define DIR_template
  $(1)_DEPEND_DIRS = configure
 endef
 $(foreach dir, $(filter-out configure,$(DIRS)),$(eval $(call DIR_template,$(dir))))
 
 iocBoot_DEPEND_DIRS += $(filter %App,$(DIRS))
+
+# TODO (wmoore): see how we can handle the dependencies of vxWorks ioc Apps
+classc1App_DEPEND_DIRS += $(filter %App,$(DIRS))
+classc4App_DEPEND_DIRS += $(filter %App,$(DIRS))
+classc6App_DEPEND_DIRS += $(filter %App,$(DIRS))
+classc8App_DEPEND_DIRS += $(filter %App,$(DIRS))
 
 include $(TOP)/configure/RULES_TOP
 
