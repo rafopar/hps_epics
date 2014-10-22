@@ -1,0 +1,3 @@
+Fix mpodCratesApp:
+  /misc/clas12/release/0.1/R3.14.12.3/support/snmp-nscl-1.0.RC6/lib/linux-x86/libdevSnmp.so: undefined reference to `smiui_current_state'
+  /misc/clas12/release/0.1/R3.14.12.3/support/snmp-nscl-1.0.RC6/lib/linux-x86/libdevSnmp.so: undefined reference to `smiui_send_command'
