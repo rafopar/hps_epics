@@ -38,6 +38,11 @@ getOutput {
 	in  "%d";
 }
 
+getAutoRange {
+	out	"SOUR:CURR:RANG:AUTO?";
+	in  "%d";
+}
+
 getRange {
 	out "SOUR:CURR:RANG?";
 	in  "%e";
@@ -46,9 +51,10 @@ getRange {
 #######################################
 # Control Commands
 #######################################
+setAutoRange {	out "SOUR:CURR:RANG:AUTO %d";	}
 setComp		{ 	out "SOUR:CURR:COMP %f";		}
 setCurr		{ 	out "CURR %e";				}
 setEarthGnd {	out "OUTP:LTE %{OFF|ON}";		}
 setInShld 	{	out "OUTP:ISH %{GUARD|OLOW}";	}
 setOutput	{	out "OUTP:STAT %d";				}
-setRange	{	out "SOUR:CURR:RANG %e";				}
+setRange	{	out "SOUR:CURR:RANG %s";				}
