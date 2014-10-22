@@ -18,7 +18,7 @@ btaSupport_DBD += base.dbd
 btaSupport_DBD += asyn.dbd
 
 btaSupport_DBD += histogramRecord.dbd
-btaSupport_DBD += btaSupport.dbd
+#btaSupport_DBD += btaSupport.dbd
 btaSupport_DBD += stdSupport.dbd
 btaSupport_DBD += calcSupport.dbd
 btaSupport_DBD += busySupport.dbd 
@@ -56,7 +56,7 @@ bta_SRCS_vxWorks += bta_registerRecordDeviceDriver.cpp
 ###bta_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Link in the code from the support library
-bta_LIBS += btaSupport
+#bta_LIBS += btaSupport
 bta_LIBS += calc
 bta_LIBS += busy
 bta_LIBS += sscan
