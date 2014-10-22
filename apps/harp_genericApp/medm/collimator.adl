@@ -95,7 +95,7 @@ display {
 		height=24
 	}
 	control {
-		chan="collimator.VAL"
+		chan="hps_collimator.VAL"
 		clr=14
 		bclr=4
 	}
@@ -111,7 +111,7 @@ display {
 		height=24
 	}
 	control {
-		chan="collimator.VAL"
+		chan="hps_collimator.VAL"
 		clr=14
 		bclr=4
 	}
@@ -126,7 +126,7 @@ display {
 		height=24
 	}
 	control {
-		chan="collimator.VAL"
+		chan="hps_collimator.VAL"
 		clr=14
 		bclr=4
 	}
@@ -146,7 +146,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="collimator_at_home"
+		chan="hps_collimator_at_home"
 	}
 }
 rectangle {
@@ -161,7 +161,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="collimator_at_a"
+		chan="hps_collimator_at_a"
 	}
 }
 rectangle {
@@ -176,7 +176,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="collimator_at_b"
+		chan="hps_collimator_at_b"
 	}
 }
 text {
@@ -213,7 +213,7 @@ text {
 		height=19
 	}
 	monitor {
-		chan="collimator.RBV"
+		chan="hps_collimator.RBV"
 		clr=14
 		bclr=51
 	}
@@ -243,7 +243,7 @@ text {
 	display[0] {
 		label="expert"
 		name="motor_expert.adl"
-		args="motor_name=collimator"
+		args="motor_name=hps_collimator"
 	}
 	clr=19
 	bclr=60
@@ -271,7 +271,7 @@ text {
 		height=24
 	}
 	control {
-		chan="collimator.VAL"
+		chan="hps_collimator.VAL"
 		clr=14
 		bclr=4
 	}
@@ -290,7 +290,7 @@ rectangle {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="collimator_at_d"
+		chan="hps_collimator_at_d"
 	}
 }
 text {
@@ -329,7 +329,7 @@ text {
 	}
 	"dynamic attribute" {
 		vis="if zero"
-		chan="collimator.DMOV"
+		chan="hps_collimator.DMOV"
 	}
 	textix="moving"
 }

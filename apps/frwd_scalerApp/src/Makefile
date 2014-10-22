@@ -17,18 +17,17 @@ DBD += frwd_scalerSupport.dbd
 frwd_scalerSupport_DBD += base.dbd
 frwd_scalerSupport_DBD += asyn.dbd
 
-frwd_scalerSupport_DBD += std.dbd
-frwd_scalerSupport_DBD += drvAsynIPPort.dbd
+#frwd_scalerSupport_DBD += drvAsynIPPort.dbd
 frwd_scalerSupport_DBD += stdSupport.dbd
 frwd_scalerSupport_DBD += calcSupport.dbd
 frwd_scalerSupport_DBD += busySupport.dbd 
 frwd_scalerSupport_DBD += sscanSupport.dbd 
 frwd_scalerSupport_DBD += asSupport.dbd
 frwd_scalerSupport_DBD += devSequencer.dbd
-frwd_scalerSupport_DBD += stream.dbd
-frwd_scalerSupport_DBD += streamSynApps.dbd
+#frwd_scalerSupport_DBD += stream.dbd
+#frwd_scalerSupport_DBD += streamSynApps.dbd
 frwd_scalerSupport_DBD += vmeVXSupport.dbd
-
+frwd_scalerSupport_DBD += std.dbd
 
 
 frwd_scalerSupport_LIBS += $(EPICS_BASE_IOC_LIBS)
@@ -57,7 +56,6 @@ frwd_scaler_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Link in the code from the support library
 frwd_scaler_LIBS += frwd_scalerSupport
-frwd_scaler_LIBS += std
 frwd_scaler_LIBS += asyn
 frwd_scaler_LIBS += mca
 frwd_scaler_LIBS += calc
@@ -66,7 +64,8 @@ frwd_scaler_LIBS += sscan
 frwd_scaler_LIBS += autosave
 frwd_scaler_LIBS += vme
 frwd_scaler_LIBS += std
-frwd_scaler_LIBS += stream streamSynApps
+#frwd_scaler_LIBS += stream streamSynApps
+frwd_scaler_LIBS += asyn
 frwd_scaler_LIBS += seqDev seq pv 
 
 # NOTE: To build SNL programs, SNCSEQ must be defined
