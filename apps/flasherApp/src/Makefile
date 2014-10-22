@@ -15,6 +15,7 @@ DBD += flasher.dbd
 
 # flasher.dbd will be made up from these files:
 flasher_DBD += base.dbd
+flasher_DBD += devIocStats.dbd
 flasher_DBD += drvAsynIPPort.dbd
 flasher_DBD += stream.dbd
 flasher_DBD += system.dbd
@@ -30,6 +31,7 @@ flasher_SRCS_vxWorks += -nil-
 #flasher_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Link in the code from the support library
+flasher_LIBS += devIocStats
 flasher_LIBS += stream
 flasher_LIBS += asyn
 
