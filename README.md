@@ -15,8 +15,9 @@ git push
 ## Using branches
 If doing much of a feature add or rework, use a branch.
 ```
-git clone https://github.com/wmoore28/epics.git
-git branch <branch-name>
+git clone https://github.com/wmoore28/epics.git <local-dir>  # defaults to epics
+cd <local-dir>
+git branch <branch-name>    # only if creating a new branch
 git checkout <branch-name>
 ```
 Edit/add code then commit the changes.  Once ready, push changes to the remote repository.
