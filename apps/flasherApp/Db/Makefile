@@ -13,6 +13,8 @@ include $(TOP)/configure/CONFIG
 DB    += flasher.db
 PROTO += flasher.proto
 
+DB_INSTALLS += $(DEVIOCSTATS)/db/iocAdminSoft.db
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>

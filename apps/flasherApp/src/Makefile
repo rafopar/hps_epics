@@ -17,6 +17,7 @@ DBD += flasher.dbd
 flasher_DBD += base.dbd
 flasher_DBD += drvAsynIPPort.dbd
 flasher_DBD += stream.dbd
+flasher_DBD += system.dbd
 
 # flasher_registerRecordDeviceDriver.cpp derives from flasher.dbd
 flasher_SRCS += flasher_registerRecordDeviceDriver.cpp

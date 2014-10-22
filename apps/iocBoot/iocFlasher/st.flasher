@@ -14,9 +14,9 @@ drvAsynIPPortConfigure("L1","B_HPS_FLASHER1:9764",0,0,0)
 drvAsynIPPortConfigure("L2","B_HPS_FLASHER2:9764",0,0,0)
 
 ## Comment these for verbose output - for debugging purposes.
-###asynSetTraceMask("L1", 0, 4)
-###asynSetTraceIOMask("L1", 0, 6)
-###asynSetTraceIOTruncateSize("L1", 0, 1000)
+#asynSetTraceMask("L1", 0, 4)
+#asynSetTraceIOMask("L1", 0, 6)
+#asynSetTraceIOTruncateSize("L1", 0, 1000)
 #asynSetTraceMask("L2", 0, 4)
 #asynSetTraceIOMask("L2", 0, 6)
 #asynSetTraceIOTruncateSize("L2", 0, 1000)
