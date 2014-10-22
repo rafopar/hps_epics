@@ -1,3 +1,5 @@
-Fix mpodCratesApp:
-  /misc/clas12/release/0.1/R3.14.12.3/support/snmp-nscl-1.0.RC6/lib/linux-x86/libdevSnmp.so: undefined reference to `smiui_current_state'
-  /misc/clas12/release/0.1/R3.14.12.3/support/snmp-nscl-1.0.RC6/lib/linux-x86/libdevSnmp.so: undefined reference to `smiui_send_command'
+2014-10-22 (wmoore)
+  Sort out app build order for classc*Apps.  These are the container apps for the vxWorks IOCs
+  and they need to have their component apps compiled first.  Currently, this is hacked with a
+  dependency added to ${TOP}/Makefile.
+
