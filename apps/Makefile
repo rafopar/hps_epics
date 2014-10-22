@@ -5,10 +5,6 @@ DIRS := $(DIRS) $(filter-out $(DIRS), configure)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
 
-# TODO (wmoore): remove after mpodCratesApp build gets sorted out
-EXCLUDE_LIST := mpodCratesApp
-DIRS := $(filter-out $(EXCLUDE_LIST),$(DIRS))
-
 
 define DIR_template
  $(1)_DEPEND_DIRS = configure

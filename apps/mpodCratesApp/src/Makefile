@@ -11,7 +11,7 @@ include $(TOP)/configure/CONFIG
 #=============================
 # build an ioc application
 
-PROD_IOC = mpodCrates
+PROD_IOC_Linux = mpodCrates
 # mpodCrates.dbd will be created and installed
 DBD += mpodCrates.dbd
 
@@ -40,7 +40,7 @@ mpodCrates_SRCS_vxWorks += -nil-
 
 #sergey
 #define where to get devSnmp
-devSnmp_DIR = $(DEVSNMP)/lib/$(EPICS_HOST_ARCH)/
+#devSnmp_DIR = $(DEVSNMP)/lib/$(EPICS_HOST_ARCH)/
 ### valera devSnmp_DIR = $(CLAS)/epics/drivers/lib/$(EPICS_HOST_ARCH)/
 
 
