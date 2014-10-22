@@ -23,7 +23,7 @@ keithley6221_DBD += base.dbd
 keithley6221_DBD += stream.dbd
 keithley6221_DBD += drvAsynIPPort.dbd
 keithley6221_DBD += asSupport.dbd
-#keithley6221_DBD += devIocStats.dbd
+keithley6221_DBD += devIocStats.dbd
 
 # keithley6221_registerRecordDeviceDriver.cpp derives from keithley6221.dbd
 keithley6221_SRCS += keithley6221_registerRecordDeviceDriver.cpp
@@ -35,7 +35,7 @@ keithley6221_SRCS_vxWorks += -nil-
 # Link in the code from the support library
 keithley6221_LIBS += autosave
 keithley6221_LIBS += stream
-#keithley6221_LIBS += devIocStats
+keithley6221_LIBS += devIocStats
 keithley6221_LIBS += asyn
 
 # Finally link to the EPICS Base libraries

@@ -13,6 +13,8 @@ include $(TOP)/configure/CONFIG
 DB    += keithley6221.db
 PROTO += keithley6221.proto
 
+DB_INSTALLS += $(DEVIOCSTATS)/db/iocAdminSoft.db
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>

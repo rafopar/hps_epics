@@ -21,6 +21,7 @@ drvAsynIPPortConfigure("SER2", "hallb-moxa1:4002")
 #asynSetTraceIOMask("SER2",-1,0x2)
 
 ## Load record instances
+dbLoadRecords("db/iocAdminSoft.db", "IOC=${IOC}")
 dbLoadRecords("db/keithley6221.db", "P=K, R=6221:, PORT=SER2")
 
 cd ${TOP}/iocBoot/${IOC}

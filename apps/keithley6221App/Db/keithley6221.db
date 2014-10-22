@@ -58,6 +58,14 @@ record(bi, "$(P)$(R)OUTPUT") {
 	field(SCAN, "1 second")
 }
 
+record(bi, "$(P)$(R)AUTO_RANGE") {
+	field(DTYP, "stream")
+	field(INP,  "@keithley6221.proto getAutoRange $(PORT)")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+	field(SCAN, "1 second")
+}
+
 record(ai, "$(P)$(R)RANGE") {
 	field(DTYP, "stream")
 	field(INP,  "@keithley6221.proto getRange $(PORT)")
@@ -101,8 +109,23 @@ record(bo, "$(P)$(R)OUTPUT:SET") {
 	field(ONAM, "ON")
 }
 
-record(ao, "$(P)$(R)RANGE:SET") {
+record(bo, "$(P)$(R)AUTO_RANGE:SET") {
+	field(DTYP, "stream")
+	field(OUT,  "@keithley6221.proto setAutoRange $(PORT)")
+	field(ZNAM, "OFF")
+	field(ONAM, "ON")
+}
+
+record(mbbo, "$(P)$(R)RANGE:SET") {
 	field(DTYP, "stream")
 	field(OUT,  "@keithley6221.proto setRange $(PORT)")
-	field(PREC, "3")
+	field(ZRST, "2e-9")
+	field(ONST, "20e-9")
+	field(TWST, "200e-9")
+	field(THST, "2e-6")
+	field(FRST, "20e-6")
+	field(FVST, "200e-6")
+	field(SXST, "2e-3")
+	field(SVST, "20e-3")
+	field(EIST, "100e-3")
 }
