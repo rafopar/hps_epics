@@ -73,7 +73,7 @@ dbLoadRecords("db/scan.db","motor_name=harp_tagger, start_at=18, end_at=58.0, st
 
 dbLoadRecords("db/radiators.db")
 dbLoadRecords("db/convertors.db")
-##dbLoadRecords("db/collimators.db")
+dbLoadRecords("db/collimators.db")
 
 dbLoadRecords("db/scaler.db")
 dbLoadRecords("db/scaler_d.db")
@@ -158,7 +158,7 @@ dbpf "moller_accumulate","1"
 ## Start any sequence programs
 #seq &sncExample, "user=levon"
 
-#seq &asym
+seq &asym
 #seq &moller_setup
 #seq &moeller_target
 

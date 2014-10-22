@@ -46,7 +46,8 @@ CALC=$(EPICS_SYNAPPS)/calc-2-8
 MCA=$(EPICS_SYNAPPS)/mca-s55
 VME=$(EPICS_SYNAPPS)/vme-2-7
 
-DEVIOCSTATS=/home/levon/controls/R3.14.12.3/support/devIocStats-3.1.12
+DEVIOCSTATS=$(EPICS_SUPPORT)/devIocStats-3.1.12
+XYDIGITAL=$(EPICS_SUPPORT)/xycomDigital1-5
 
 SELF=$(TOP)
 

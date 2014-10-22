@@ -17,15 +17,15 @@ DBD += scaler_eSupport.dbd
 scaler_eSupport_DBD += base.dbd
 scaler_eSupport_DBD += asyn.dbd
 
-scaler_eSupport_DBD += drvAsynIPPort.dbd
+#scaler_eSupport_DBD += drvAsynIPPort.dbd
 scaler_eSupport_DBD += stdSupport.dbd
 scaler_eSupport_DBD += calcSupport.dbd
 scaler_eSupport_DBD += busySupport.dbd 
 scaler_eSupport_DBD += sscanSupport.dbd 
 scaler_eSupport_DBD += asSupport.dbd
 scaler_eSupport_DBD += devSequencer.dbd
-scaler_eSupport_DBD += stream.dbd
-scaler_eSupport_DBD += streamSynApps.dbd
+#scaler_eSupport_DBD += stream.dbd
+#scaler_eSupport_DBD += streamSynApps.dbd
 scaler_eSupport_DBD += vmeVXSupport.dbd
 scaler_eSupport_DBD += std.dbd
 
@@ -65,7 +65,7 @@ scaler_e_LIBS += sscan
 scaler_e_LIBS += autosave
 scaler_e_LIBS += vme
 scaler_e_LIBS += std
-scaler_e_LIBS += stream streamSynApps
+#scaler_e_LIBS += stream streamSynApps
 scaler_e_LIBS += asyn
 scaler_e_LIBS += seqDev seq pv 
 
