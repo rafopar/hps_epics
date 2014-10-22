@@ -1,9 +1,0 @@
-startup = "/home/levon/github/epics/apps/iocBoot/iocclassc1"
-putenv("ARCH=vxWorks-ppc604_long")
-putenv("IOC=iocclassc1")
-top = "/home/levon/github/epics/apps"
-putenv("TOP=/home/levon/github/epics/apps")
-topbin = "/home/levon/github/epics/apps/bin/vxWorks-ppc604_long"
-self = "/home/levon/github/epics/apps"
-putenv("SELF=/home/levon/github/epics/apps")
-selfbin = "/home/levon/github/epics/apps/bin/vxWorks-ppc604_long"
