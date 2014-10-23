@@ -128,7 +128,7 @@ function parseconfig {
 	h=0
 
 IFS=":"
-	while read  iocname computer port status options start_options
+	while read  iocname computer port status stcmd options start_options
 	do
 		if [ "`echo $iocname | cut -c1`" = "#" ] ; then
 		# Skip comments
@@ -144,18 +144,17 @@ IFS=":"
           computer=`echo "$computer" | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
           port=`echo "$port" | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
           status=`echo "$status" | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
+          stcmd=`echo "$stcmd" | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
           
           #remove white space at start and end
           options=`echo "$options" | sed 's/^[ \t]*//;s/[ \t]*$//'`
           start_options=`echo "$start_options" | sed 's/^[ \t]*//;s/[ \t]*$//'`
-          
-		#print $(eval echo \$${ioc}_port) 
+		            
 		export ${iocname}_host="$computer"    
 		export ${iocname}_port="$port"
+		export ${iocname}_stcmd="$stcmd"
 		export ${iocname}_options="$options"
 		export ${iocname}_start_options="$start_options"
-
-		#export ${iocname}_status=$options
 
 		iocs[$i]=$iocname
 		((i=i+1)) 
@@ -204,7 +203,8 @@ function printcommands {
 		OPTIONS="$(eval echo \$${i}_options)"
 		START_OPTIONS="$(eval echo \$${i}_start_options)"
 		PORT="$(eval echo \$${i}_port)"
-	     echo "$APP_EXE $OPTIONS -n $i -i^D^C -c $IOC_DIR/$i $PORT ./${i}AppsO/${i}Apps startup.all $START_OPTIONS >/dev/null 2>&1"  
+		STCMD="$(eval echo \$${i}_stcmd)"
+	     echo "$APP_EXE $OPTIONS -n $i -i^D^C -c $IOC_DIR/$i $PORT $STCMD $START_OPTIONS >/dev/null 2>&1"  
 		done
 	echo ""
 
@@ -236,6 +236,7 @@ function start_ioc {
 		return 1
 	 fi
 	 
+	 STCMD="$(eval echo \$${i}_stcmd)"
 	 OPTIONS="$(eval echo \$${i}_options)"
 	 START_OPTIONS="$(eval echo \$${i}_start_options)"
 	 processfound="`ps -ef | grep -v grep | grep $1 | grep $2 | awk '{print $2}'`"
@@ -245,7 +246,7 @@ function start_ioc {
 	 fi
          
  
-	 $APP_EXE $OPTIONS -n $1 -i^D^C -c $IOC_DIR/$1 $2 ./st.cmd $START_OPTIONS >/dev/null 2>&1
+	 $APP_EXE $OPTIONS -n $1 -i^D^C -c $IOC_DIR/$1 $2 $STCMD $START_OPTIONS >/dev/null 2>&1
  
          if [ $? != 0 ]; then
 	 echo "Could not start $1 on port $2 of $HOST"
@@ -259,9 +260,10 @@ function start_ioc {
 
 function test_ioc {
 	
+	 STCMD="$(eval echo \$${i}_stcmd)"
 	 OPTIONS="$(eval echo \$${i}_options)"
 	 START_OPTIONS="$(eval echo \$${i}_start_options)"
-	 echo "$APP_EXE $OPTIONS -n $1 -i^D^C -c $IOC_DIR/$1 $2 ./st.cmd $START_OPTIONS>/dev/null 2>&1"           
+	 echo "$APP_EXE $OPTIONS -n $1 -i^D^C -c $IOC_DIR/$1 $2 $STCMD $START_OPTIONS >/dev/null 2>&1"           
 	 return 0
       	 
 }

@@ -123,10 +123,11 @@ IFS=":"
 		fi
           
           #remove white space at start and end and only accept a single string
-          iocname=`echo "$iocname" | sed 's/^[ \t]*//;s/[ \t]*$//' | awk '{print $1}'`
+          iocname=`echo "$iocname"   | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
           computer=`echo "$computer" | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
-          port=`echo "$port" | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
-          status=`echo "$status" | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
+          port=`echo "$port"         | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
+          stcmd=`echo "$stcmd"       | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
+          status=`echo "$status"     | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
           
           #remove white space at start and end
           options=`echo "$options" | sed 's/^[ \t]*//;s/[ \t]*$//'`
