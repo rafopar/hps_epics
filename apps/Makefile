@@ -4,6 +4,8 @@ include $(TOP)/configure/CONFIG
 DIRS := $(DIRS) $(filter-out $(DIRS), configure)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
+# Build our medm links
+DIRS := $(DIRS) $(filter-out $(DIRS), medm)
 
 
 define DIR_template
