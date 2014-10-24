@@ -55,57 +55,57 @@ BINARY_LIST="$HOSTNAME $ID $TELNET $SSH $APP_EXE"
 # Global Functions
 #-----------------------------------------------------------------------
 function usage {
-	echo "usage: $SCRIPT_NAME [-h] iocname"
+    echo "usage: $SCRIPT_NAME [-h] iocname"
     echo ""
-	echo "[-h] Print Help"
-	echo ""
-	echo "Examples:"
-	echo "$SCRIPT_NAME [-h]"
-	echo "$SCRIPT_NAME iocsofthrt - start a console on ioc iocsofthrt"
-	echo ""
-	echo "CONFIGURATION FILES:"
-	echo "--------------------"
-	for FILE in $FILE_LIST 	
-	do
-		echo $FILE
-	done
-	
-	echo ""
+    echo "[-h] Print Help"
+    echo ""
+    echo "Examples:"
+    echo "$SCRIPT_NAME [-h]"
+    echo "$SCRIPT_NAME iocsofthrt - start a console on ioc iocsofthrt"
+    echo ""
+    echo "CONFIGURATION FILES:"
+    echo "--------------------"
+    for FILE in $FILE_LIST     
+    do
+        echo $FILE
+    done
+    
+    echo ""
 
-	printconfig
+    printconfig
 }
 
 function checkfile {
-	if [ ! -f $1 ];then
-		echo "Could not find file $1" 
-		exit 1
-	fi
+    if [ ! -f $1 ];then
+        echo "Could not find file $1" 
+        exit 1
+    fi
 }
 
 function checkdir {
-	if [ ! -d $1 ];then
-		echo "Could not find directory $1" 
-		exit 1
-	fi
-}	
+    if [ ! -d $1 ];then
+        echo "Could not find directory $1" 
+        exit 1
+    fi
+}    
 
 function parseconfig {
-	i=0
-	e=0
-	d=0
-	h=0
+    i=0
+    e=0
+    d=0
+    h=0
 
-	IFS=":"
-	while read  iocname computer port status options start_options
-	do
-		if [ "`echo $iocname | cut -c1`" = "#" ] ; then
-		# Skip comments
-		continue
-		fi
-		if [ "`echo $iocname | cut -c1`" = "" ] ; then
-		# Skip blank lines
-		continue
-		fi
+    IFS=":"
+    while read  iocname computer port status options start_options
+    do
+        if [ "`echo $iocname | cut -c1`" = "#" ] ; then
+        # Skip comments
+        continue
+        fi
+        if [ "`echo $iocname | cut -c1`" = "" ] ; then
+        # Skip blank lines
+        continue
+        fi
           
           #remove white space at start and end and only accept a single string
           iocname=`echo "$iocname"   | sed 's/^[ \t]*//;s/[ \t]*$//'| awk '{print $1}'`
@@ -118,70 +118,66 @@ function parseconfig {
           options=`echo "$options" | sed 's/^[ \t]*//;s/[ \t]*$//'`
           start_options=`echo "$start_options" | sed 's/^[ \t]*//;s/[ \t]*$//'`
           
-		#print $(eval echo \$${ioc}_port) 
-		export ${iocname}_host="$computer"    
-		export ${iocname}_port="$port"
-		export ${iocname}_options="$options"
-		export ${iocname}_start_options="$start_options"
+        #print $(eval echo \$${ioc}_port) 
+        export ${iocname}_host="$computer"    
+        export ${iocname}_port="$port"
+        export ${iocname}_options="$options"
+        export ${iocname}_start_options="$start_options"
 
-		#export ${iocname}_status=$options
+        #export ${iocname}_status=$options
 
-		iocs[$i]=$iocname
-		((i=i+1)) 
+        iocs[$i]=$iocname
+        ((i=i+1)) 
 
-		case $status in
-		enable|enabled|on)
-			iocs_enabled[$e]=$iocname  
-			((e=e+1))
-			export ${iocname}_status=enabled
-		;;
-		*)
-			iocs_disabled[$d]=$iocname   
-			((d=d+1))
-			export ${iocname}_status=disabled
-		esac
+        case $status in
+        enable|enabled|on)
+            iocs_enabled[$e]=$iocname  
+            ((e=e+1))
+            export ${iocname}_status=enabled
+        ;;
+        *)
+            iocs_disabled[$d]=$iocname   
+            ((d=d+1))
+            export ${iocname}_status=disabled
+        esac
 
-		if [ "$computer" = "$HOST" ] ; then
-		iocs_host[$h]=$iocname
-		((h=h+1))
-		fi
-
-	done < $CONFIG_FILE
-unset IFS
+        if [ "$computer" = "$HOST" ] ; then
+        iocs_host[$h]=$iocname
+        ((h=h+1))
+        fi
+    done < $CONFIG_FILE
+	unset IFS
 }
 
 function printconfig {
-
-	echo "IOC CONFIGURATION"
-	echo "-----------------"
-	for i in ${iocs[*]}
-		do
-		#echo IOC configured STATUS to run HOST:PORT
-		echo "$i $(eval echo \$${i}_status) to run on $(eval echo \$${i}_host):$(eval echo \$${i}_port)"
-		done
-	echo ""
-
+    echo "IOC CONFIGURATION"
+    echo "-----------------"
+    for i in ${iocs[*]}
+        do
+        #echo IOC configured STATUS to run HOST:PORT
+        echo "$i $(eval echo \$${i}_status) to run on $(eval echo \$${i}_host):$(eval echo \$${i}_port)"
+        done
+    echo ""
 }
 
 
 #-----------------------------------------------------------------------
 # Process Options
 #-----------------------------------------------------------------------
-
 parseconfig
 
 while getopts ":h:" opt; do
     case $opt in
         
-	h) usage 
-	   return 0
-	   ;;
+    h) usage 
+       return 0
+       ;;
        \?) echo "Unknown Option: $opt"
-       	   usage
+              usage
            return 0
            ;;
         *) echo "Unknown Option: $opt"
-	   usage
+       usage
            return 1
                 ;;      
     esac
@@ -193,84 +189,78 @@ done
 shift $(($OPTIND - 1))
 
 if [ -z "$1" ]; then
-	echo "You must specify an ioc"
-	echo ""
-	usage
-	exit 1
+    echo "You must specify an ioc"
+    echo ""
+    usage
+    exit 1
 fi
 
 #-----------------------------------------------------------------------
 # Data File Sanity Check
 #-----------------------------------------------------------------------
+for DIR in $DIR_LIST    
+    do
+    checkdir $DIR
+    done
+    
+for FILE in $FILE_LIST     
+    do
+    checkfile $FILE
+    done        
 
-for DIR in $DIR_LIST	
-	do
-	checkdir $DIR
-	done
-	
-for FILE in $FILE_LIST 	
-	do
-	checkfile $FILE
-	done		
-
-for BINARY in $BINARY_LIST 	
-	do
-	checkfile $FILE
-	done
+for BINARY in $BINARY_LIST     
+    do
+    checkfile $FILE
+    done
 
 #-----------------------------------------------------------------------
 # Main Routine
 #-----------------------------------------------------------------------
-
-
 ret=0
 for IOC in ${iocs_disabled[*]}
-do	
-if [ $1 = $IOC ]; then                
-((ret=ret+1))
-fi
+do    
+    if [ $1 = $IOC ]; then
+        ((ret=ret+1))
+    fi
 done
 
 if [ $ret = 1 ]; then
-echo ""
-echo "$1 was found disabled in the configuration file" 
-echo "     $CONFIG_FILE"
-echo "You may need to update this file before continuing"
-echo ""
-printconfig
-echo ""
-exit 1
+    echo ""
+    echo "$1 was found disabled in the configuration file" 
+    echo "     $CONFIG_FILE"
+    echo "You may need to update this file before continuing"
+    echo ""
+    printconfig
+    echo ""
+    exit 1
 fi
 
 ret=0
 for IOC in ${iocs_enabled[*]}
-do	
-if [ $1 = $IOC ]; then                
-((ret=ret+1))
-fi
+do    
+    if [ $1 = $IOC ]; then                
+        ((ret=ret+1))
+    fi
 done
 
 
 if [ $ret = 0 ]; then
-echo ""
-echo "$1 was not found in the configuration file" 
-echo "     $CONFIG_FILE"
-echo "You may need to update this file before continuing"
-echo ""
-printconfig
-echo ""
-exit 1
+    echo ""
+    echo "$1 was not found in the configuration file" 
+    echo "     $CONFIG_FILE"
+    echo "You may need to update this file before continuing"
+    echo ""
+    printconfig
+    echo ""
+    exit 1
 fi
-	  
-
-#echo "$HOST"
-#echo "$(eval echo \$${ioc}_host)"
+      
 if [ "$(eval echo \$${1}_host)" = "$HOST" ] ; then
-echo "$TELNET localhost $(eval echo \$${1}_port)"
-$TELNET localhost $(eval echo \$${1}_port)
+    echo "$TELNET localhost $(eval echo \$${1}_port)"
+    $TELNET localhost $(eval echo \$${1}_port)
 else
-echo $SSH "$(eval echo \$${1}_host)" $TELNET localhost $(eval echo \$${1}_port)
-$SSH "$(eval echo \$${1}_host)" $TELNET localhost $(eval echo \$${1}_port)
+    echo $SSH "$(eval echo \$${1}_host)" $TELNET localhost $(eval echo \$${1}_port)
+    $SSH "$(eval echo \$${1}_host)" $TELNET localhost $(eval echo \$${1}_port)
 fi
 
 exit 0
