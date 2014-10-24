@@ -16,10 +16,8 @@
 #-----------------------------------------------------------------------
 # Debug variables
 #-----------------------------------------------------------------------
-# Print shell comands as they are exectued
-#set -x
-# Run the script bu do not actually execute any commands
-#set -n
+#set -x   # Print shell commands as they are executed
+#set -n   # Run the script but don't actually execute any commands
 
 #-----------------------------------------------------------------------
 # Global Variables
@@ -31,9 +29,8 @@ SCRIPT_NAME=softioc_console
 #-----------------------------------------------------------------------
 # Data File Locations
 #-----------------------------------------------------------------------
-TEST_DIR=~wmoore/workspaces/hps-epics/apps/iocBoot
-CONFIG_DIR=$TEST_DIR
-#CONFIG_DIR=${CLAS}/hps-epics/apps/iocBoot
+#CONFIG_DIR=~wmoore/workspaces/hps-epics/apps/iocBoot
+CONFIG_DIR=/misc/clas12/hps/prod/epics/apps/iocBoot
 
 IOC_DIR=$CONFIG_DIR
 DIR_LIST="$APP_DIR $CONFIG_DIR $IOC_DIR"
@@ -57,38 +54,28 @@ BINARY_LIST="$HOSTNAME $ID $TELNET $SSH $APP_EXE"
 #-----------------------------------------------------------------------
 # Global Functions
 #-----------------------------------------------------------------------
-
 function usage {
-
-echo "usage: $SCRIPT_NAME [-h] iocname"
-        
-echo ""
-echo "[-h] Print Help"
-echo ""
-
-echo "Examples:"
-echo "$SCRIPT_NAME [-h]"
-echo "$SCRIPT_NAME iocsofthrt - start a console on ioc iocsofthrt"
-echo ""
-
-#echo "APPLICATION HOME: $APP_DIR"
-#echo ""
-
-echo "CONFIGURATION FILES:"
-echo "--------------------"
-for FILE in $FILE_LIST 	
+	echo "usage: $SCRIPT_NAME [-h] iocname"
+    echo ""
+	echo "[-h] Print Help"
+	echo ""
+	echo "Examples:"
+	echo "$SCRIPT_NAME [-h]"
+	echo "$SCRIPT_NAME iocsofthrt - start a console on ioc iocsofthrt"
+	echo ""
+	echo "CONFIGURATION FILES:"
+	echo "--------------------"
+	for FILE in $FILE_LIST 	
 	do
-	echo $FILE
+		echo $FILE
 	done
+	
+	echo ""
 
-echo ""
-
-printconfig
-
+	printconfig
 }
 
 function checkfile {
-
 	if [ ! -f $1 ];then
 		echo "Could not find file $1" 
 		exit 1
@@ -96,7 +83,6 @@ function checkfile {
 }
 
 function checkdir {
-
 	if [ ! -d $1 ];then
 		echo "Could not find directory $1" 
 		exit 1
@@ -104,13 +90,12 @@ function checkdir {
 }	
 
 function parseconfig {
-
 	i=0
 	e=0
 	d=0
 	h=0
 
-IFS=":"
+	IFS=":"
 	while read  iocname computer port status options start_options
 	do
 		if [ "`echo $iocname | cut -c1`" = "#" ] ; then
