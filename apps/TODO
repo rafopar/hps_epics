@@ -1,0 +1,5 @@
+2014-10-22 (wmoore)
+  Sort out app build order for classc*Apps.  These are the container apps for the vxWorks IOCs
+  and they need to have their component apps compiled first.  Currently, this is hacked with a
+  dependency added to ${TOP}/Makefile.
+
