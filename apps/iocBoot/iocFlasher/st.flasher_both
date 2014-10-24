@@ -1,4 +1,4 @@
-#!../../bin/linux-x86_64/streamDevice 
+#!../../bin/linux-x86/flasher 
 
 < envPaths
 

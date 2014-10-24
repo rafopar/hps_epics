@@ -1,2 +1,0 @@
-2014-10-01 09:41:20.746 WARNING [Thread 1] org.epics.pvmanager.jdbc.JDBCXMLServiceFactory (createServices) - Directory /misc/clas12/epics/CSS_3.2.16/configuration/services/jdbc does not exist
-2014-10-01 09:41:20.748 WARNING [Thread 1] org.epics.pvmanager.pva.rpcservice.PVARPCXMLServiceFactory (createServices) - Directory /misc/clas12/epics/CSS_3.2.16/configuration/services/pvarpc does not exist
