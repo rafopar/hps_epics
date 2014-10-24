@@ -406,7 +406,11 @@ int open_file(char *fname, char *motor_name, char *shortname)
     strcat(shortname, fname);
     strcat(shortname, ".txt" );
 
-    strcpy(thename, "/home/epics/data/e_scans/");
+/*    strcpy(thename, "/home/epics/data/e_scans/"); */
+    strcpy(thename, "/home/epics/data/HARP_SCANS/");
+    strcat(thename, motor_name);
+    strcat(thename, "/");
+
     strcat(thename, shortname);
 
 
