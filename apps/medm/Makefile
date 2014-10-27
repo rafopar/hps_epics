@@ -1,16 +1,24 @@
-ADL_FILES_WITH_PATH = $(shell find .. -name "*.adl" -type f)
-GIF_FILES_WITH_PATH = $(shell find .. -name "*.gif" -type f)
+# 
+# MEDM symlink builder
+#
+# Files are only linked from <name>App/medm/.  Majority of EPICS make options 
+# are allowed to ensure compatibility with the build system.  
+# 
+
+ADL_FILES_WITH_PATH = $(shell find ../*App/medm/ -name "*.adl" -type f)
+GIF_FILES_WITH_PATH = $(shell find ../*App/medm/ -name "*.gif" -type f)
+SH_FILES_WITH_PATH  = $(shell find ../*App/medm/ -name "*.sh"  -type f)
+
 SOFT_LINK_COMMAND = $(foreach file_with_path, \
-	$(ADL_FILES_WITH_PATH) $(GIF_FILES_WITH_PATH), \
+	$(ADL_FILES_WITH_PATH) $(GIF_FILES_WITH_PATH) $(SH_FILES_WITH_PATH), \
 	ln -s $(file_with_path) $(notdir $(file_with_path)) ; )
 
 MEDM_HTTP_COMMAND = $(foreach file_with_path, \
-	$(ADL_FILES_WITH_PATH) $(GIF_FILES_WITH_PATH), \
+	$(ADL_FILES_WITH_PATH) $(GIF_FILES_WITH_PATH) $(SH_FILES_WITH_PATH), \
 	cp $(file_with_path) /u/group/clas/www/clasweb/html/medm)
 
 all: clean
 	$(SOFT_LINK_COMMAND)
-	ln -s . hbptarg
 
 http:
 	$(RM) /u/group/clas/www/clasweb/html/medm/*.adl
@@ -20,7 +28,7 @@ http:
 clean:
 	$(RM) *.adl
 	$(RM) *.gif
-	$(RM) hbptarg
+	$(RM) *.sh
 
 distclean: clean
 install:   all

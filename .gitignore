@@ -22,6 +22,4 @@ envPaths
 dllPath.bat
 
 ## symlinks created in medm/
-apps/medm/*.adl
-apps/medm/*.gif
-apps/medm/hbptarg
+apps/medm/*.*
