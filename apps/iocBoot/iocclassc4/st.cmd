@@ -35,6 +35,7 @@ dbLoadRecords("db/frwd_scaler.db")
 dbLoadRecords("db/stopper.db")
 ##dbLoadRecords("db/fcup_gain.db")
 
+
 dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=0")
 dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=1")
 dbLoadRecords("db/svt_scan_scaler_macro.db","FIFO=200, CHAN=2")
