@@ -146,10 +146,10 @@ cd startup
 iocInit
 
 # set some initial values:
-##dbpf "fcup_offset","0"
-##dbpf "fcup_slope","9256"
+dbpf "fcup_offset","0"
+dbpf "fcup_slope","9256"
 #dbpf "fcup_slope","9267"
-##dbpf "moller_accumulate","1"
+dbpf "moller_accumulate","1"
 #dbpf "scaler.CNT","1"
 #dbpf "scaler_d.CNT","1"
 #dbpf "scaler_d_mode.VAL","1"
