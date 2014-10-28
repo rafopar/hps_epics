@@ -68,7 +68,7 @@ long scaler_datasc1[16];
 long scaler_datasc4[16];
 
 assign scaler_datasc1[0] to "scaler.S1";
-assign scaler_datasc1[1] to "scaler.S2";
+assign scaler_datasc1[1] to "scalerS2b.VAL";
 assign scaler_datasc1[2] to "scaler.S3";
 assign scaler_datasc1[3] to "scaler.S4";
 assign scaler_datasc1[4] to "scaler.S5";
@@ -85,7 +85,7 @@ assign scaler_datasc1[14] to "scaler.S15";
 assign scaler_datasc1[15] to "scaler.S16";
 
 assign scaler_datasc4[0] to "scaler_c.S1";
-assign scaler_datasc4[1] to "scaler_c.S2";
+assign scaler_datasc4[1] to "scaler_cS2b.VAL";
 assign scaler_datasc4[2] to "scaler_c.S3";
 assign scaler_datasc4[3] to "scaler_c.S4";
 assign scaler_datasc4[4] to "scaler_c.S5";
