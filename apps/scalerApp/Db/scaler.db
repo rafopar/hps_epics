@@ -79,7 +79,7 @@ grecord(calcout,"scaler_wait")
 	field(OCAL, "1")
 }
 
-grecord(mbbo,"display_c_mode")
+grecord(mbbo,"display_mode")
 {
 	field(FLNK,"scaler_calc1.PROC PP MS")
 	
@@ -117,7 +117,7 @@ grecord(transform,"scaler_cts1")
 	field(CLCI,"(a=1)?d/f:d")
 	field(CLCJ,"(a=1)?e/f:e")
 
-	field(INPA,"display_c_mode.RVAL NPP NMS")
+	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"scaler.T NPP NMS")
 
 	field(INPB,"scaler.S2 NPP NMS")
@@ -144,7 +144,7 @@ grecord(transform,"scaler_cts2")
 	field(CLCI,"(a=1)?d/f:d")
 	field(CLCJ,"(a=1)?e/f:e")
 
-	field(INPA,"display_c_mode.RVAL NPP NMS")
+	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"scaler.T NPP NMS")
 
 	field(INPB,"scaler.S6 NPP NMS")
@@ -171,7 +171,7 @@ grecord(transform,"scaler_cts3")
 	field(CLCI,"(a=1)?d/f:d")
 	field(CLCJ,"(a=1)?e/f:e")
 
-	field(INPA,"display_c_mode.RVAL NPP NMS")
+	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"scaler.T NPP NMS")
 
 	field(INPB,"scaler.S10 NPP NMS")
@@ -196,7 +196,7 @@ grecord(transform,"scaler_cts4")
 	field(CLCI,"(a=1)?d/f:d")
 	field(CLCJ,"(a=1)?e/(10*f):e")
 
-	field(INPA,"display_c_mode.RVAL NPP NMS")
+	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"scaler.T NPP NMS")
 
 	field(INPC,"scaler.S14 NPP NMS")
@@ -220,7 +220,7 @@ grecord(transform,"scaler_cts5")
 	field(CLCI,"(a=2 && f>0.010)?d/k/f:d")
 	field(CLCJ,"(a=2 && f>0.010)?e/k/f:e")
 
-	field(INPA,"display_c_mode.RVAL NPP NMS")
+	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"HLB:bta_main_cur.VAL NPP NMS")
 	field(INPK,"scaler.T NPP NMS")
 
@@ -248,7 +248,7 @@ grecord(transform,"scaler_cts6")
 	field(CLCI,"(a=2 && f>0.010)?d/f/k:d")
 	field(CLCJ,"(a=2 && f>0.010)?e/f/k:e")
 
-	field(INPA,"display_c_mode.RVAL NPP NMS")
+	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"HLB:bta_main_cur.VAL NPP NMS")
 	field(INPK,"scaler.T NPP NMS")
 
@@ -276,7 +276,7 @@ grecord(transform,"scaler_cts7")
 	field(CLCI,"(a=2 && f>0.010)?d/f/k:d")
 	field(CLCJ,"(a=2 && f>0.010)?e/f/k:e")
 
-	field(INPA,"display_c_mode.RVAL NPP NMS")
+	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"HLB:bta_main_cur.VAL NPP NMS")
 	field(INPK,"scaler.T NPP NMS")
 
@@ -303,7 +303,7 @@ grecord(transform,"scaler_cts8")
 	field(CLCI,"(a=2 && f>0.010)?d/f/k:d")
 	field(CLCJ,"(a=2 && f>0.010)?e/f/k:e")
 
-	field(INPA,"display_c_mode.RVAL NPP NMS")
+	field(INPA,"display_mode.RVAL NPP NMS")
 	field(INPF,"HLB:bta_main_cur.VAL NPP NMS")
 	field(INPK,"scaler.T NPP NMS")
 

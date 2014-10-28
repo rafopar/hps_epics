@@ -1185,7 +1185,7 @@ text {
 		height=60
 	}
 	control {
-		ctrl="display_c_mode.VAL"
+		ctrl="display_mode.VAL"
 		clr=14
 		bclr=52
 	}
