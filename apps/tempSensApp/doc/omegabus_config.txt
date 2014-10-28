@@ -1,0 +1,45 @@
+--------------------------------------------------------------------------------
+Omegabus D5311 Configuration
+--------------------------------------------------------------------------------
+
+------------------------------
+POWER REQUIREMENTS
+------------------------------
++10-30 VDC
+
+------------------------------
+DEFAULTS
+------------------------------
+Default Serial:     Baud 300, 8N1
+Default Address:    1
+Default Config:
+    Cmd:  $1RS      # returns 4-bytes for config settings
+    Resp: *31020080 # base addr 1 (0x31) pg. 36,
+                    # 300 baud (0x02) pg. 40,
+                    # 1-channel/echo off (0x00) pg. 42,
+                    # +XXXXX.X0/No filtering (0x80) pg. 45
+
+------------------------------
+HPS CONFIGURATION
+------------------------------
+Modules are assigned as channels A-T.  Below are the commands used to configure 
+the last module [Q-T]
+	
+    $1WE            # write enable
+    $1SU5102F480    # base addr Q (0x51) pg. 36, 
+                    # 9600 baud (0x02) pg. 40,
+                    # 4-channels enabled/echo on (0xF4) pg. 42,
+                    # +XXXXX.X0/No filtering (0x80) pg. 45
+    # Change terminal baud, then test.
+    $QRD            # read channel 1
+    $RRD            # read channel 2
+    $SRD            # read channel 3
+    $TRD            # read channel 4
+
+------------------------------
+WIRING (for Moxa NPort)
+------------------------------
+Using standard Cat5/6 cable...
+TxD - Blue
+RxD - Blue/White
+GND - Green
