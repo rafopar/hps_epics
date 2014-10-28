@@ -42,7 +42,7 @@ FILE_LIST="$CONFIG_FILE"
 #-----------------------------------------------------------------------
 # Command Variables
 #-----------------------------------------------------------------------
-HOSTNAME='/bin/hostname'
+HOSTNAME='/bin/hostname -s'
 HOST=`$HOSTNAME`
 ID='/usr/bin/id'
 
@@ -79,7 +79,7 @@ function usage {
     echo "--------------------"
 
     for FILE in $FILE_LIST     
-        do
+    do
         echo $FILE
         done
     
@@ -165,7 +165,7 @@ function printconfig {
     echo "IOC CONFIGURATION"
     echo "-----------------"
     for i in ${iocs[*]}
-        do
+    do
         #echo IOC configured STATUS to run HOST:PORT
         echo "$i $(eval echo \$${i}_status) to run on $(eval echo \$${i}_host):$(eval echo \$${i}_port)"
         done
@@ -175,13 +175,14 @@ function printconfig {
 function printcommands {
     echo "IOC START COMMANDS"
     echo "------------------"
-    for i in ${iocs[*]} do
+    for i in ${iocs[*]}
+    do
         OPTIONS="$(eval echo \$${i}_options)"
         START_OPTIONS="$(eval echo \$${i}_start_options)"
         PORT="$(eval echo \$${i}_port)"
         STCMD="$(eval echo \$${i}_stcmd)"
         echo "$APP_EXE $OPTIONS -n $i -i^D^C -c $IOC_DIR/$i $PORT $STCMD $START_OPTIONS >/dev/null 2>&1"  
-        done
+    done
     echo ""
 }
 
@@ -190,10 +191,11 @@ function printhostconfig {
     echo "--------------------------"
     
     if [ "${iocs_host[*]}" != "" ]; then
-        for i in ${iocs_host[*]} do
+        for i in ${iocs_host[*]}
+        do
             #echo IOC configured STATUS to run HOST:PORT
             echo "$i $(eval echo \$${i}_status) to run on $(eval echo \$${i}_host):$(eval echo \$${i}_port)"
-            done
+        done
     else
         echo "No iocs are configured to run on $HOST"    
     fi
@@ -212,7 +214,7 @@ function start_ioc {
     START_OPTIONS="$(eval echo \$${i}_start_options)"
     processfound="`ps -ef | grep -v grep | grep $1 | grep $2 | awk '{print $2}'`"
     if [ "$processfound" != "" ] ; then
-         echo "Could not start $1 - $1 is already running with pid $processfound" 
+        echo "Could not start $1 - $1 is already running with pid $processfound" 
         return 1
     fi
     
@@ -220,10 +222,10 @@ function start_ioc {
  
     if [ $? != 0 ]; then
         echo "Could not start $1 on port $2 of $HOST"
-         return 1
+        return 1
     else 
         echo "Started $1 on port $2 of $HOST  `date`"     
-         return 0
+        return 0
     fi
 }
 
@@ -288,14 +290,15 @@ function checkuser {
 #-----------------------------------------------------------------------
 # Process Options
 #-----------------------------------------------------------------------
-while getopts ":hc:i:" opt; do
+while getopts ":hc:i:" opt
+do
     case $opt in
     c) 
          CONFIG_FILE=$OPTARG    
            FILE_LIST="$CONFIG_FILE"
            for FILE in $FILE_LIST     
            do
-            checkfile $FILE
+               checkfile $FILE
            done    
            ;;   
     i) 
