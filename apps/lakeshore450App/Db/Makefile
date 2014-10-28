@@ -10,7 +10,8 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install)
 # databases, templates, substitutions like this
-
+DB    += lakeshore450.db
+PROTO += lakeshore450.proto
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
