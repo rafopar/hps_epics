@@ -4,7 +4,7 @@
 ## automatically cd to the directory containing its startup script
 cd "$IOC_root_classc4/iocBoot/iocclassc4"
 
-< cdCommands_clon10
+< cdCommands
 #< ../nfsCommands
 < ../network
 #< ../users
