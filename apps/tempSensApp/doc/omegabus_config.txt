@@ -24,7 +24,7 @@ HPS CONFIGURATION
 ------------------------------
 Modules are assigned as channels A-T.  Below are the commands used to configure 
 the last module [Q-T]
-	
+    
     $1WE            # write enable
     $1SU5102F480    # base addr Q (0x51) pg. 36, 
                     # 9600 baud (0x02) pg. 40,
@@ -36,10 +36,20 @@ the last module [Q-T]
     $SRD            # read channel 3
     $TRD            # read channel 4
 
+Remember after you execute the SU command, you have to use the new base address
+for configuration commands (ex. $QWE, $QSU...)
+
 ------------------------------
-WIRING (for Moxa NPort)
+WIRING
 ------------------------------
 Using standard Cat5/6 cable...
-TxD - Blue
-RxD - Blue/White
-GND - Green
+
+For Moxa NPort
+    TxD - Blue
+    RxD - Blue/White
+    GND - Green
+
+For Laptop
+    TxD - Blue/White
+    RxD - Blue
+    GND - Green
