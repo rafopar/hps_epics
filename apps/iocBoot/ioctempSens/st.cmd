@@ -21,7 +21,7 @@ drvAsynIPPortConfigure("SER1", "hallb-moxa1:4001")
 #asynSetTraceIOMask("SER1",-1,0x2)
 
 ## Load record instances
-dbLoadTemplate("db/iocAdminSoft.db" "IOC=${IOC}")
+dbLoadTemplate("db/iocAdminSoft.db", "IOC=${IOC}")
 dbLoadRecords("db/save_restoreStatus.db", "P=${IOC}:")
 dbLoadTemplate("db/tempSens.substitutions")
 
