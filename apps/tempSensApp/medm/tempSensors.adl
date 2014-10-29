@@ -845,7 +845,7 @@ rectangle {
 	object {
 		x=25
 		y=209
-		width=700
+		width=860
 		height=4
 	}
 	"basic attribute" {
@@ -1508,7 +1508,7 @@ rectangle {
 	object {
 		x=27
 		y=359
-		width=700
+		width=860
 		height=4
 	}
 	"basic attribute" {
@@ -2171,7 +2171,7 @@ rectangle {
 	object {
 		x=29
 		y=509
-		width=700
+		width=860
 		height=4
 	}
 	"basic attribute" {
@@ -2834,7 +2834,7 @@ rectangle {
 	object {
 		x=29
 		y=659
-		width=700
+		width=860
 		height=4
 	}
 	"basic attribute" {
@@ -4150,7 +4150,7 @@ rectangle {
 	object {
 		x=29
 		y=809
-		width=700
+		width=860
 		height=4
 	}
 	"basic attribute" {

@@ -3837,7 +3837,7 @@ text {
 	object {
 		x=100
 		y=77
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3852,7 +3852,7 @@ text {
 	object {
 		x=100
 		y=109
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3867,7 +3867,7 @@ text {
 	object {
 		x=100
 		y=141
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3882,7 +3882,7 @@ text {
 	object {
 		x=100
 		y=173
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3897,7 +3897,7 @@ text {
 	object {
 		x=102
 		y=227
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3912,7 +3912,7 @@ text {
 	object {
 		x=102
 		y=259
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3927,7 +3927,7 @@ text {
 	object {
 		x=102
 		y=291
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3942,7 +3942,7 @@ text {
 	object {
 		x=102
 		y=323
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3957,7 +3957,7 @@ text {
 	object {
 		x=104
 		y=377
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3972,7 +3972,7 @@ text {
 	object {
 		x=104
 		y=409
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -3987,7 +3987,7 @@ text {
 	object {
 		x=104
 		y=441
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4002,7 +4002,7 @@ text {
 	object {
 		x=104
 		y=473
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4017,7 +4017,7 @@ text {
 	object {
 		x=104
 		y=527
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4032,7 +4032,7 @@ text {
 	object {
 		x=104
 		y=559
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4047,7 +4047,7 @@ text {
 	object {
 		x=104
 		y=591
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4062,7 +4062,7 @@ text {
 	object {
 		x=104
 		y=623
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4077,7 +4077,7 @@ text {
 	object {
 		x=105
 		y=677
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4092,7 +4092,7 @@ text {
 	object {
 		x=105
 		y=709
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4107,7 +4107,7 @@ text {
 	object {
 		x=105
 		y=741
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4122,7 +4122,7 @@ text {
 	object {
 		x=105
 		y=773
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4881,7 +4881,7 @@ text {
 	object {
 		x=105
 		y=827
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4896,7 +4896,7 @@ text {
 	object {
 		x=105
 		y=859
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4911,7 +4911,7 @@ text {
 	object {
 		x=105
 		y=891
-		width=105
+		width=160
 		height=25
 	}
 	control {
@@ -4926,7 +4926,7 @@ text {
 	object {
 		x=105
 		y=923
-		width=105
+		width=160
 		height=25
 	}
 	control {
