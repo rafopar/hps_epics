@@ -1,6 +1,6 @@
 
 file {
-	name="/home/wmoore/workspaces/epics-lakeshore/apps/lakeshore450App/medm/lakeshore450.adl"
+	name="/home/wmoore/workspaces/epics-develop/apps/lakeshore450App/medm/lakeshore450.adl"
 	version=030108
 }
 display {
@@ -420,7 +420,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)PROBE:TYPE"
+		chan="$(P)PROBETYPE"
 		clr=15
 		bclr=12
 	}
@@ -449,7 +449,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="$(P)PROBE:FIELDCOMP:SET"
+		chan="$(P)FIELDCOMP:SET"
 		clr=14
 		bclr=4
 	}
@@ -462,7 +462,7 @@ menu {
 		height=20
 	}
 	monitor {
-		chan="$(P)PROBE:FIELDCOMP"
+		chan="$(P)FIELDCOMP"
 		clr=15
 		bclr=12
 	}
@@ -490,7 +490,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="$(P)PROBE:TEMPCOMP:SET"
+		chan="$(P)TEMPCOMP:SET"
 		clr=14
 		bclr=4
 	}
@@ -503,7 +503,7 @@ menu {
 		height=20
 	}
 	monitor {
-		chan="$(P)PROBE:TEMPCOMP"
+		chan="$(P)TEMPCOMP"
 		clr=15
 		bclr=12
 	}
