@@ -12,9 +12,12 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 DB    += tempSens.template
 DB    += tempSens.substitutions
-DB    += $(AUTOSAVE)/asApp/Db/save_restoreStatus.db
+
+DB_INSTALLS += $(AUTOSAVE)/asApp/Db/save_restoreStatus.db
+DB_INSTALLS += $(DEVIOCSTATS)/db/iocAdminSoft.db
 
 PROTO += omegaD5311.proto
+REQ   += tempSens_chan.req
 REQ   += tempSens_settings.req
 
 #----------------------------------------------------

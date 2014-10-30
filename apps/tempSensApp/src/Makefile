@@ -22,8 +22,8 @@ DBD += tempSens.dbd
 tempSens_DBD += base.dbd
 tempSens_DBD += drvAsynIPPort.dbd
 tempSens_DBD += stream.dbd
-#tempSens_DBD += asSupport.dbd
-#tempSens_DBD += devIocStats.dbd
+tempSens_DBD += asSupport.dbd
+tempSens_DBD += devIocStats.dbd
 
 # tempSens_registerRecordDeviceDriver.cpp derives from tempSens.dbd
 tempSens_SRCS += tempSens_registerRecordDeviceDriver.cpp
@@ -35,9 +35,9 @@ tempSens_SRCS_vxWorks += -nil-
 # Add support from base/src/vxWorks if needed
 #tempSens_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
-#tempSens_LIBS += autosave
+tempSens_LIBS += autosave
+tempSens_LIBS += devIocStats
 tempSens_LIBS += stream streamSynApps
-#tempSens_LIBS += devIocStats
 tempSens_LIBS += asyn
 tempSens_LIBS += $(EPICS_BASE_IOC_LIBS)
 
