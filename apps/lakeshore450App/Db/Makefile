@@ -16,6 +16,7 @@ REQ   += lakeshore450_settings.req
 PROTO += lakeshore450.proto
 
 DB_INSTALLS += $(AUTOSAVE)/asApp/Db/save_restoreStatus.db
+DB_INSTALLS += $(DEVIOCSTATS)/db/iocAdminSoft.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
