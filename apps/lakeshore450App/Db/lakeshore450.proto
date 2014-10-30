@@ -13,16 +13,22 @@ ReplyTimeout = 1000;
 # Interface Commands
 #######################################
 getLock {
-	out "LOCK?";
-	in  "%d";
+    out "LOCK?";
+    in  "%d";
 }
-setLock { out "LOCK %d"; }
+setLock {
+    out "LOCK %d";
+    @init { getLock; }
+}
 
 getMode {
-	out "MODE?";
-	in  "%d";
+    out "MODE?";
+    in  "%d";
 }
-setMode { out "MODE %d"; }
+setMode {
+    out "MODE %d";
+    @init { getMode; }
+}
 
 #######################################
 # Device Specific Commands
@@ -31,72 +37,94 @@ getACDC {
     out "ACDC?";
     in  "%d";
 }
-setACDC { out "ACDC %d"; }
+setACDC {
+    out "ACDC %d";
+    @init { getACDC; }
+}
 
 getAutoRange {
-	out "AUTO?";
-	in  "%d";
+    out "AUTO?";
+    in  "%d";
 }
-setAutoRange { out "AUTO %d"; }
+
+setAutoRange {
+    out "AUTO %d";
+    @init { getAutoRange; }
+}
 
 getField {
-	ExtraInput = Ignore;	# depending on field length, it will return with spaces
-	out "FIELD?";
-	in  "%f";
+    ExtraInput = Ignore;    # depending on field length, it will return with spaces
+    out "FIELD?";
+    in  "%f";
 }
 
 getFieldM {
-	ExtraInput = Ignore;	# depending on field length, it will return with spaces
-	out "FIELDM?";
-	in  "%s";
+    out "FIELDM?";
+    in  "%s";
+	@mismatch { in " "; }
 }
 
 getFilt {
-	out "FILT?";
-	in  "%d";
+    out "FILT?";
+    in  "%d";
 }
 setFilt {
-	out "FILT %d";
+    out "FILT %d";
+    @init { getFilt; }
 }
 
 getFnum {
-	out "FNUM?";
-	in  "%d";
+    out "FNUM?";
+    in  "%d";
 }
-setFnum { out "FNUM %d"; }
+
+setFnum {
+    out "FNUM %d";
+    @init { getFnum; }
+}
 
 getRange {
-	out "RANGE?";
-	in  "%d";
+    out "RANGE?";
+    in  "%d";
 }
-setRange { out "RANGE %d"; }
+setRange {
+    out "RANGE %d";
+    @init { getRange; }
+}
 
 getUnits {
-	out "UNIT?";
-	in  "%s";
+    out "UNIT?";
+    in  "%s";
 }
-setUnits { out "UNIT %s"; }
+
+setUnits {
+    out "UNIT %s";
+    @init { getUnits; }
+}
 
 #######################################
 # Probe Specific Commands
 #######################################
 getProbeType {
-	out "TYPE?";
-	in  "%d";
+    out "TYPE?";
+    in  "%d";
 }
 
 getFieldComp {
-	out "FCOMP?";
-	in  "%d";
+    out "FCOMP?";
+    in  "%d";
 }
+
 setFieldComp {
-	out "FCOMP %d";
+    out "FCOMP %d";
+    @init { getFieldComp; }
 }
 
 getTempComp {
-	out "TCOMP?";
-	in  "%d";
+    out "TCOMP?";
+    in  "%d";
 }
 setTempComp {
-	out "TCOMP %d";
+    out "TCOMP %d";
+    @init { getTempComp; }
 }

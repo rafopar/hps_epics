@@ -14,5 +14,6 @@
   ## Specify restore files
   set_pass0_restoreFile("info_positions.sav")
   set_pass0_restoreFile("info_settings.sav")
+  set_pass0_restoreFile("lakeshore_settings.sav")
   set_pass1_restoreFile("info_settings.sav")
   set_pass1_restoreFile("lakeshore_settings.sav")
