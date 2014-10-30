@@ -6,7 +6,7 @@ file {
 display {
 	object {
 		x=1063
-		y=353
+		y=321
 		width=400
 		height=200
 	}
@@ -109,25 +109,9 @@ rectangle {
 		clr=4
 	}
 }
-"text update" {
-	object {
-		x=176
-		y=93
-		width=105
-		height=25
-	}
-	monitor {
-		chan="HPS:LS450_1:FIELD"
-		clr=15
-		bclr=12
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
 text {
 	object {
-		x=40
+		x=61
 		y=97
 		width=105
 		height=21
@@ -135,7 +119,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="HPS:LS450_1 - Field"
+	textix="HPS:LS450_1"
 }
 rectangle {
 	object {
@@ -191,7 +175,7 @@ text {
 }
 text {
 	object {
-		x=40
+		x=61
 		y=126
 		width=105
 		height=21
@@ -199,7 +183,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="HPS:LS450_2 - Field"
+	textix="HPS:LS450_2"
 }
 "text update" {
 	object {
@@ -235,12 +219,54 @@ text {
 "text update" {
 	object {
 		x=281
-		y=93
+		y=122
 		width=25
 		height=25
 	}
 	monitor {
-		chan="HPS:LS450_1:UNITS"
+		chan="HPS:LS450_2:UNITS"
+		clr=15
+		bclr=12
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=176
+		y=72
+		width=130
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Field"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=310
+		y=72
+		width=25
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Exp"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=176
+		y=93
+		width=105
+		height=25
+	}
+	monitor {
+		chan="HPS:LS450_1:FIELD"
 		clr=15
 		bclr=12
 	}
@@ -251,12 +277,12 @@ text {
 "text update" {
 	object {
 		x=281
-		y=122
+		y=93
 		width=25
 		height=25
 	}
 	monitor {
-		chan="HPS:LS450_2:UNITS"
+		chan="HPS:LS450_1:UNITS"
 		clr=15
 		bclr=12
 	}

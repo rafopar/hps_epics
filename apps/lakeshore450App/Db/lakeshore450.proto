@@ -12,6 +12,12 @@ ReplyTimeout = 1000;
 #######################################
 # Interface Commands
 #######################################
+getLock {
+	out "LOCK?";
+	in  "%d";
+}
+setLock { out "LOCK %d"; }
+
 getMode {
 	out "MODE?";
 	in  "%d";
@@ -34,8 +40,15 @@ getAutoRange {
 setAutoRange { out "AUTO %d"; }
 
 getField {
+	ExtraInput = Ignore;	# depending on field length, it will return with spaces
 	out "FIELD?";
 	in  "%f";
+}
+
+getFieldM {
+	ExtraInput = Ignore;	# depending on field length, it will return with spaces
+	out "FIELDM?";
+	in  "%s";
 }
 
 getFilt {
@@ -58,8 +71,32 @@ getRange {
 }
 setRange { out "RANGE %d"; }
 
-getUnit {
+getUnits {
 	out "UNIT?";
-	in  "%c";
+	in  "%s";
 }
-setUnit { out "UNIT %c"; }
+setUnits { out "UNIT %s"; }
+
+#######################################
+# Probe Specific Commands
+#######################################
+getProbeType {
+	out "TYPE?";
+	in  "%d";
+}
+
+getFieldComp {
+	out "FCOMP?";
+	in  "%d";
+}
+setFieldComp {
+	out "FCOMP %d";
+}
+
+getTempComp {
+	out "TCOMP?";
+	in  "%d";
+}
+setTempComp {
+	out "TCOMP %d";
+}
