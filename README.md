@@ -1,34 +1,54 @@
 #HPS EPICS
 
-### Getting Started
-Using the *master* directly for small changes:
+## Getting Started
+To get a github repository setup for HPS EPICS developement:
+* Create a github account and login
+* Create a new repository using the "+" near the top right of the webpage, don't check "Initialize Repository with a README"
+* On your desktop:
 ```
-git clone https://github.com/wmoore28/epics
+mkdir <newdir>
+cd <newdir>
+git init
+git remote add origin https://github.com/<username>/<new-repo-name>
+git remote add hps-epics https://github.com/wmoore28/epics
+git pull hps-epics master
+git push -u origin master
 ```
-Edit/add code then commit the changes.  Once ready, push changes to the remote repository.
+* Edit/add files then commit the changes.  Push to your remote repository (on github).
 ```
 git add <changed files>
 git commit -m "Meaningful comments about changes"
 git push
 ```
-### Staying in sync
-Add a remote to the official repository
+
+## Submit code to HPS EPICS
+I recommend doing a pull from the wmoore28/epics first, getting updates from others *(See: Staying in sync)*
+
+On github, navigate to your repository with the changes you want to submit.
+* Switch to the branch with the changes
+* Click the **Compare, review, create a pull request** button
+* Ensure the branches being compared are correct and review changes **(submit to wmoore28/epics:develop)**
+* Click **Create pull request**
+
+## Staying in sync
+Add a remote to the official repository (view remotes with 'git remote -v')
 ```
-git remote add wmoore28-epics https://github.com/wmoore28/epics
+git remote add hps-epics https://github.com/wmoore28/epics
 # get updates from remote branch, most likely master
-git pull wmoore28-epics <branch-name>
-# if everything looks good...
+git pull hps-epics <branch-name>
+# if everything looks good...push changes to your repo
 git push origin master
 ```
-### Using branches
+
+## Using branches
 If doing much of a feature add or rework, use a branch.
 ```
+# Clone your repo.  Example:
 git clone https://github.com/wmoore28/epics.git <local-dir>  # defaults to epics
 cd <local-dir>
-git branch <branch-name>    # only if creating a new branch
-git checkout <branch-name>
+git checkout -b <branch-name>    # omit -b if using an existing branch
 ```
-Edit/add code then commit the changes.  Once ready, push changes to your remote repository.
+Edit/add code then commit the changes.  Once ready, push changes to your remote branch (on github).
 ```
 git add <changed files>
 git commit -m "Meaningful comments about changes"
