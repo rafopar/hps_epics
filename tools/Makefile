@@ -1,5 +1,7 @@
 TOOLDIRS := procServMgr
 
+.PHONY: all clean distclean install uninstall 
+
 all:
 	-@for dir in $(TOOLDIRS); do cd $$dir && make all ; done
 
