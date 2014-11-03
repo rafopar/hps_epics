@@ -102,7 +102,7 @@ dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=28")
 dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=29")
 dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=30")
 dbLoadRecords("db/sixty_hz_macro.db", "FIFO=4096, HALF_FIFO=2048, CHAN=31")
-
+  
 #cd dbLoadRecords("db/motor.db","motor_name=hps, card=0, slot=3, srev=2000, urev=0.2, direction=Pos, velo=0.2, accl=0.5")
 
 
@@ -121,7 +121,7 @@ dbLoadRecords("db/scan.db","motor_name=hps_collimator,start_at=18,end_at=58.0,st
 dbLoadRecords("db/radiators.db")
 dbLoadRecords("db/convertors.db")
 dbLoadRecords("db/collimators.db")
-
+q
 
 
 # Load IOC status records
@@ -191,7 +191,7 @@ seq &reset_motor, "name=viewer_reset, motor_name=viewer"
 seq &reset_motor, "name=hps_collimator_reset, motor_name=hps_collimator"
 seq &harp_scan_generic, "name=hps_collimator_scan, motor_name=hps_collimator"
 
-seq &sixtyHz
+#seq &sixtyHz
 #seq &scaler_frwd_restart
 #seq &scaler_c_restart
 
