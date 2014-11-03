@@ -20,4 +20,8 @@ file "db/tempSens.template" { pattern
 {tempSensor,    R,       SER1,        0,    "5 second"}
 {tempSensor,    S,       SER1,        0,    "5 second"}
 {tempSensor,    T,       SER1,        0,    "5 second"}
+{tempSensor,    U,       SER1,        0,    "5 second"}
+{tempSensor,    V,       SER1,        0,    "5 second"}
+{tempSensor,    W,       SER1,        0,    "5 second"}
+{tempSensor,    X,       SER1,        0,    "5 second"}
 }

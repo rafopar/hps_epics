@@ -1,7 +1,0 @@
-record(calc, "$(P)$(CHAN)c") {
-    field(CALC, "A-7")
-    field(INPA, "$(P)$(CHAN)")
-    field(EGU,  "$(EGU)")
-    field(PREC, "$(PREC)")
-    field(SCAN, "$(SCAN)")
-}

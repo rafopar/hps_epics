@@ -7,12 +7,13 @@
   save_restoreSet_SeqPeriodInSeconds(30)
 
   ## Specify paths
-  set_savefile_path("${TOP}/iocBoot/${IOC}/sav")
-  set_requestfile_path("${TOP}/iocBoot/${IOC}")
-  set_requestfile_path("${TOP}/req")
+  set_savefile_path("sav")
+  set_requestfile_path(".")
+  set_requestfile_path("../../req")
 
   ## Specify restore files
   set_pass0_restoreFile("info_positions.sav")
   set_pass0_restoreFile("info_settings.sav")
+  set_pass0_restoreFile("lakeshore_settings.sav")
   set_pass1_restoreFile("info_settings.sav")
-  set_pass1_restoreFile("tempSens_settings.sav")
+  set_pass1_restoreFile("lakeshore_settings.sav")
